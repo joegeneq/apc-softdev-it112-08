@@ -36,7 +36,7 @@ AppAsset::register($this);
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
                     ['label' => 'Home', 'url' => ['/site/index']],
-					['label' => 'Register', 'url' => ['/patient/index']],
+					['label' => 'Register', 'url' => ['/register/index']],
 					['label' => 'City', 'url' => ['/city/index']],
 					['label' => 'Country', 'url' => ['/country/index']],
 					['label' => 'Health Cards', 'url' => ['/healthcard/index']],
