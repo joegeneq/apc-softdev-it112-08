@@ -76,7 +76,7 @@ class Patient extends \yii\db\ActiveRecord
             'PATIENT_NAME_LAST' => 'Patient  Name  Last',
             'PATIENT_NAME_FIRST' => 'Patient  Name  First',
             'PATIENT_NAME_MIDDLE' => 'Patient  Name  Middle',
-            'PATIENT_BDAY' => 'Patient  Bday',
+            'PATIENT_BDAY' => 'Patient  Birthday',
             'PATIENT_SEX' => 'Patient  Sex',
             'PATIENT_HOME' => 'Patient  Home',
             'PATIENT_CITY' => 'Patient  City',
