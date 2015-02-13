@@ -26,7 +26,7 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'My Company',
+                'brandLabel' => 'Abesamis',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
@@ -36,6 +36,7 @@ AppAsset::register($this);
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
                     ['label' => 'Home', 'url' => ['/site/index']],
+					['label' => 'say my name', 'url' => ['/site/say']],
 					['label' => 'Patient', 'url' => ['/patient/index']],
 					['label' => 'City', 'url' => ['/city/index']],
 					['label' => 'Country', 'url' => ['/country/index']],
