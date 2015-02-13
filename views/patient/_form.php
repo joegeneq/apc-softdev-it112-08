@@ -6,6 +6,7 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\Patient */
 /* @var $form yii\widgets\ActiveForm */
+/*     <?= $form->field($model, 'PATIENT_SEX')->textInput(['maxlength' => 1]) ?> */
 ?>
 
 <div class="patient-form">
@@ -20,7 +21,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'PATIENT_BDAY')->textInput() ?>
 
-    <?= $form->field($model, 'PATIENT_SEX')->textInput(['maxlength' => 1]) ?>
+
+
+    <?= $form->field($model, 'PATIENT_SEX')->radioList(array('M'=>'Male','F'=>'Female'))->label('Sex'); ?>
+
+
 
     <?= $form->field($model, 'PATIENT_HOME')->textInput(['maxlength' => 102]) ?>
 
