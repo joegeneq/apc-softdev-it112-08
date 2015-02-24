@@ -4,7 +4,17 @@ Pt6vg2KU6dZ3
 
 province _form
 <?= $form->field($model, 'region_id')->textInput() ?>
+------
+    <?php
+    $regions=Region::find()->all();
+    $listData=ArrayHelper::map($regions,'region_id','region_code');
+    echo $form->field($model, 'region')->dropDownList(
+    	$listData,['prompt'=>'Select Region']);
+    ?>
 
+province view
+            'region_id',
+------
 
 
 

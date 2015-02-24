@@ -20,7 +20,7 @@ use app\models\Region;
     <?php
     $regions=Region::find()->all();
     $listData=ArrayHelper::map($regions,'region_id','region_code');
-    echo $form->field($model, 'region_id')->dropDownList(
+    echo $form->field($model, 'region')->dropDownList(
     	$listData,['prompt'=>'Select Region']);
     ?>
 
