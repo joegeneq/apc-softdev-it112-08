@@ -16,6 +16,7 @@ use dosamigos\datepicker\DatePicker;
 <div class="days-form">
 
     <?php $form = ActiveForm::begin(); ?>
+    
 
 <?= $form->field($model, 'date')->widget(
     DatePicker::className(), [
@@ -25,7 +26,7 @@ use dosamigos\datepicker\DatePicker;
         //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
         'clientOptions' => [
             'autoclose' => true,
-            'format' => 'dd-M-yyyy'
+            'format' => 'yyyy-mm-dd'
         ]
 ]);?>
     <div class="form-group">

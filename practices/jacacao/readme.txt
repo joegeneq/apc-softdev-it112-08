@@ -1,23 +1,23 @@
 queries
-yii2 drop down list
-yii2 user login
-yii2 create multiple tables with next button
-yii2 multiple insert table
-yii2 parent-child model create with next button
-yii2 multiple forms connected by next
+->  yii2 drop down list
+->  yii2 user login
+->  yii2 create multiple tables with next button
+->  yii2 multiple insert table
+->  yii2 parent-child model create with next button
+->  yii2 multiple forms connected by next
 http://www.yiiframework.com/wiki/19/how-to-use-a-single-form-to-collect-data-for-two-or-more-models/
 
 yii2 parent forms
 
 http://www.bsourcecode.com/yiiframework2/yii2-0-activeform-input-fields/
 
-yii2 button link to another form
+->  yii2 button link to another form
 
 
 this:
 http://www.naeemrana.com/technology/how-to-install-composer-dependency-manager-for-php-in-windows/
 
-
+yii2 widget jquery step navigation save at the end
 
 
 
@@ -218,3 +218,10 @@ tapos ung php composer.phar require "2amigos/yii2-date-picker-widget" "*"
 take notes: https://getcomposer.org/doc/00-intro.md
 
     <?= $form->field($model, 'date')->textInput() ?>
+
+install ko dropdown-x
+php composer.phar require kartik-v/yii2-dropdown-x "*" - http://demos.krajee.com/dropdown-x
+
+install ko 
+php composer.phar require kartik-v/yii2-checkbox-x "*"
+http://demos.krajee.com/checkbox-x
