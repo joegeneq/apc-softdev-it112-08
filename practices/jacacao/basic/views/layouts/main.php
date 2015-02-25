@@ -36,6 +36,7 @@ AppAsset::register($this);
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
                     ['label' => 'Home', 'url' => ['/site/index']],
+                    ['label' => 'Days', 'url' => ['/days/index']],
                     ['label' => 'Region', 'url' => ['/region/index']],
                     ['label' => 'Province', 'url' => ['/province/index']],
                     ['label' => 'City', 'url' => ['/city/index']],
@@ -69,3 +70,19 @@ AppAsset::register($this);
 </body>
 </html>
 <?php $this->endPage() ?>
+
+
+
+http://slippry.com/
+http://designscrazed.org/free-responsive-jquery-image-sliders/
+http://designmodo.com/jquery-techniques-tutorials/3/
+http://www.designzzz.com/free-jquery-navigation/
+http://www.stunningmesh.com/2010/12/100-excellent-jquery-plugins-for-navigation-and-menus/
+
+jquery navigation steps
+
+http://www.jquery-steps.com/GettingStarted
+http://www.jquery-steps.com/Examples#advanced-form
+
+wish:
+https://github.com/2amigos/yii2-date-picker-widget
