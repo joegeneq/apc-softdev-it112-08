@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2015 at 01:46 AM
+-- Generation Time: Feb 28, 2015 at 01:56 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -39,7 +39,14 @@ CREATE TABLE IF NOT EXISTS `myaddress` (
   `landline` varchar(20) DEFAULT NULL,
   `cellphone` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `myaddress`
+--
+
+INSERT INTO `myaddress` (`id`, `firstname`, `middlename`, `lastname`, `gender`, `created_at`, `home_address`, `landline`, `cellphone`) VALUES
+(1, 'Jocelyn', 'Alfaro', 'Cacao', 'F', '2015-02-28 00:54:04', 'Brgy. Marcelo, Paranaque City', '821-1588', '09258003066');
 
 -- --------------------------------------------------------
 
@@ -55,7 +62,14 @@ CREATE TABLE IF NOT EXISTS `mycomment` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `mycomment_ibfk_1` (`myaddress_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `mycomment`
+--
+
+INSERT INTO `mycomment` (`id`, `myaddress_id`, `author`, `body`, `created_at`) VALUES
+(1, 1, 'Jocelyn Cacao', 'Is this for a book? Though the topic is common, the author managed to make twists with the plot and characters. I would totally recommend this.', '2015-02-28 00:56:07');
 
 --
 -- Constraints for dumped tables
