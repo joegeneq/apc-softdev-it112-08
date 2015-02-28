@@ -18,9 +18,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'lastname')->textInput(['maxlength' => 30]) ?>
 
-    <?= $form->field($model, 'gender')->textInput(['maxlength' => 1]) ?>
+    <?= $form->field($model, 'gender')->radioList(array('M'=>'Male','F'=>'Female')); ?>
 
-    <?= $form->field($model, 'created_at')->textInput() ?>
+    <!--<?= $form->field($model, 'created_at')->textInput() ?>-->
+    <!-- <?= $form->field($model, 'gender')->textInput(['maxlength' => 1]) ?> -->
 
     <?= $form->field($model, 'home_address')->textInput(['maxlength' => 50]) ?>
 
