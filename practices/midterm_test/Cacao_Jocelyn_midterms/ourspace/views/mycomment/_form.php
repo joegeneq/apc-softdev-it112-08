@@ -14,8 +14,8 @@ use yii\helpers\ArrayHelper;
     <?php $form = ActiveForm::begin(); ?>
 
         <?php
-    $ids=Myaddress::find()->all();
-    $listData=ArrayHelper::map($ids,'lastname','lastname');
+    $addresses=Myaddress::find()->all();
+    $listData=ArrayHelper::map($addresses,'id','lastname');
     echo $form->field($model, 'myaddress_id')->dropDownList(
         $listData,['prompt'=>'Select Lastname']);
     ?>

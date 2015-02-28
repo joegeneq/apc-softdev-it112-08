@@ -46,10 +46,12 @@ class Mycomment extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'myaddress_id' => 'Myaddress ID',
+            //'myaddress_id' => 'Myaddress ID',
+            'myaddress_id' => 'Lastname',
             'author' => 'Author',
             'body' => 'Body',
             'created_at' => 'Created At',
+            'myaddressName' => Yii::t('app', 'Lastname')
         ];
     }
 
@@ -60,7 +62,7 @@ class Mycomment extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Myaddress::className(), ['id' => 'myaddress_id']);
     }
-        public function getLastName(){
+        public function getMyaddressName(){
         return $this->myaddress->lastname;
     }
 }
