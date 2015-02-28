@@ -29,7 +29,8 @@ class Region extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['region_code', 'region_description'], 'string', 'max' => 32]
+            [['region_code'], 'string', 'max' => 32],
+            [['region_description'], 'string', 'max' => 45]
         ];
     }
 

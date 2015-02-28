@@ -47,6 +47,7 @@ class Province extends \yii\db\ActiveRecord
             'province_code' => 'Province Code',
             'province_description' => 'Province Description',
             'region_id' => 'Region ID',
+            'regionName' => Yii::t('app', 'Region Name')
         ];
     }
 
@@ -64,5 +65,8 @@ class Province extends \yii\db\ActiveRecord
     public function getRegion()
     {
         return $this->hasOne(Region::className(), ['region_id' => 'region_id']);
+    }
+    public function getRegionName(){
+        return $this->region->region_code;
     }
 }

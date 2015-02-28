@@ -49,3 +49,16 @@ $this->title = 'My Yii Application';
 
     </div>
 </div>
+
+
+<div class="col-md-3 col-sm-4">
+        <div class="list-group">
+            <a class="list-group-item active" href="/basic/web/index.php?r=gii%2Fdefault%2Fview&amp;id=model"><i class="glyphicon glyphicon-chevron-right"></i>Model Generator</a>
+            <a class="list-group-item" href="/basic/web/index.php?r=gii%2Fdefault%2Fview&amp;id=crud"><i class="glyphicon glyphicon-chevron-right"></i>CRUD Generator</a>
+            <a class="list-group-item" href="/basic/web/index.php?r=gii%2Fdefault%2Fview&amp;id=controller"><i class="glyphicon glyphicon-chevron-right"></i>Controller Generator</a>
+            <a class="list-group-item" href="/basic/web/index.php?r=gii%2Fdefault%2Fview&amp;id=form"><i class="glyphicon glyphicon-chevron-right"></i>Form Generator</a>
+            <a class="list-group-item" href="/basic/web/index.php?r=gii%2Fdefault%2Fview&amp;id=module"><i class="glyphicon glyphicon-chevron-right"></i>Module Generator</a>
+            <a class="list-group-item" href="/basic/web/index.php?r=gii%2Fdefault%2Fview&amp;id=extension"><i class="glyphicon glyphicon-chevron-right"></i>Extension Generator</a>
+        </div>
+</div>
+

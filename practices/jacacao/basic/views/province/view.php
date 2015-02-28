@@ -31,7 +31,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'province_id',
             'province_code',
             'province_description',
-            'region_id',
+            //'region_id',
+            'regionName',
+            //['attribute' => 'region', 'value' => 'region.region_code'],
         ],
     ]) ?>
 
