@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 28, 2015 at 01:50 AM
+-- Generation Time: Feb 28, 2015 at 07:42 AM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `softdev_Ramil_FrancesAeya_ourspace`
+-- Database: `softdev_ramil_francesaeya_ourspace`
 --
 
 -- --------------------------------------------------------
@@ -33,6 +33,9 @@ CREATE TABLE IF NOT EXISTS `myaddress` (
   `lastname` varchar(30) NOT NULL,
   `gender` varchar(1) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `home_address` varchar(50) NOT NULL,
+  `landline` varchar(20) NOT NULL,
+  `cellphone` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
