@@ -60,4 +60,7 @@ class Mycomment extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Myaddress::className(), ['id' => 'myaddress_id']);
     }
+        public function getLastName(){
+        return $this->myaddress->lastname;
+    }
 }
