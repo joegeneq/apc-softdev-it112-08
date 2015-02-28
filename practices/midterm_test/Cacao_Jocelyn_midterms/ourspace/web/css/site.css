@@ -1,6 +1,9 @@
 html,
 body {
     height: 100%;
+    background-color: #b2ffb2;
+    font-size: 18px;
+    font-family: 'Times New Roman';
 }
 
 .wrap {
@@ -23,7 +26,8 @@ body {
 
 .jumbotron {
     text-align: center;
-    background-color: transparent;
+    
+    background-color: #b2ffb2
 }
 
 .jumbotron .btn {
