@@ -13,7 +13,7 @@ use yii\helpers\ArrayHelper;
 
     <?php $form = ActiveForm::begin(); ?>
 
-        <?php
+    <?php
     $addresses=Myaddress::find()->all();
     $listData=ArrayHelper::map($addresses,'id','lastname');
     echo $form->field($model, 'myaddress_id')->dropDownList(
@@ -24,7 +24,7 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'created_at')->textInput() ?>
+    <!--<?= $form->field($model, 'created_at')->textInput() ?>-->
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
