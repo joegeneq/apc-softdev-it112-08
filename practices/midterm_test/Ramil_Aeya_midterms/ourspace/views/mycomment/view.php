@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'author',
             'body:ntext',
             'created_at',
-        ],
+        ], // Update the field myaddress in the list and view pages to show the last name instead of the numeric foreign key field value.
     ]) ?>
 
 </div>

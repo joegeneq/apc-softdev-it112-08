@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		   'value' => 'myaddress.lastname',
 		   'filter' => yii\helpers\ArrayHelper::map(app\models\Myaddress::find()->all(),'id','lastname')
 		   ],
-		   
+		   // Update the field myaddress in the list and view pages to show the last name instead of the numeric foreign key field value.
             'author',
             'body:ntext',
             'created_at',
@@ -43,3 +43,4 @@ $this->params['breadcrumbs'][] = $this->title;
     ]); ?>
 
 </div>
+
