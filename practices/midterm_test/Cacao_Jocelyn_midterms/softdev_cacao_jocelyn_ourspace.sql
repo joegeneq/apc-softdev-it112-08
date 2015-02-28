@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2015 at 01:56 AM
+-- Generation Time: Feb 28, 2015 at 09:54 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -39,14 +39,17 @@ CREATE TABLE IF NOT EXISTS `myaddress` (
   `landline` varchar(20) DEFAULT NULL,
   `cellphone` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `myaddress`
 --
 
 INSERT INTO `myaddress` (`id`, `firstname`, `middlename`, `lastname`, `gender`, `created_at`, `home_address`, `landline`, `cellphone`) VALUES
-(1, 'Jocelyn', 'Alfaro', 'Cacao', 'F', '2015-02-28 00:54:04', 'Brgy. Marcelo, Paranaque City', '821-1588', '09258003066');
+(1, 'Jocelyn', 'Alfaro', 'Cacao', 'F', '2015-02-28 00:54:04', 'Brgy. Marcelo, Paranaque City', '821-1588', '09258003066'),
+(2, 'Frances Aeya Marie', 'Tomboc', 'Ramil', 'F', '2015-02-28 05:46:12', 'Sunrise', '', ''),
+(3, 'Alyssa Mae', 'Culla', 'Acle', 'F', '2015-02-28 06:26:02', 'Makati', '', ''),
+(4, 'Francis Cornelius', 'Diosanta', 'Horca', 'M', '2015-02-28 08:29:30', 'Pasay', '', '');
 
 -- --------------------------------------------------------
 
@@ -62,14 +65,19 @@ CREATE TABLE IF NOT EXISTS `mycomment` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `mycomment_ibfk_1` (`myaddress_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `mycomment`
 --
 
 INSERT INTO `mycomment` (`id`, `myaddress_id`, `author`, `body`, `created_at`) VALUES
-(1, 1, 'Jocelyn Cacao', 'Is this for a book? Though the topic is common, the author managed to make twists with the plot and characters. I would totally recommend this.', '2015-02-28 00:56:07');
+(1, 1, 'Jocelyn Cacao', 'Is this for a book? Though the topic is common, the author managed to make twists with the plot and characters. I would totally recommend this.', '2015-02-28 00:56:07'),
+(2, 2, 'Marie', 'Bestseller, ready for movie adaptation!', '2015-02-28 05:58:08'),
+(3, 3, 'Aly', 'Varying gender, culture and age can relate to this story.', '2015-02-28 08:34:09'),
+(4, 2, 'Aeya', 'Best romantic comedy of all times!', '2015-02-28 08:35:18'),
+(5, 4, 'Cornelius', 'While not the director''s canniest piece of filmmaking, it''s unquestionably his angriest, politically motivated achievement.', '2015-02-28 08:48:20'),
+(6, 4, 'Francis', 'While not the director''s canniest piece of filmmaking, it''s unquestionably his angriest, politically motivated achievement.', '2015-02-28 08:49:34');
 
 --
 -- Constraints for dumped tables
