@@ -18,10 +18,14 @@ use app\models\Myaddress;
 	$addresses=Myaddress::find()->all();
 	$listData=ArrayHelper::map($addresses, 'id' , 'lastname');
 	echo $form->field($model, 'myaddress_id')->dropDownList(
-	['prompt'=>'Select lastname'])
+	$listData,['prompt'=>'Select lastname']);
 	
 	?>
 
+	<?= $form->field($model, 'author')->textInput(['maxlength' => 255]) ?>
+	<?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
+	<!--<?=$form->field($model, 'created_at')->textInput() ?>-->
+	
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
