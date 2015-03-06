@@ -45,15 +45,28 @@ class City extends \yii\db\ActiveRecord
             'city_id' => 'City ID',
             'city_description' => 'City Description',
             'city_code' => 'City Code',
-            'province_id' => 'Province ID',
+            'province_id' => 'Province',
+            'provinceName' => Yii::t('app', 'Province'),
+            'region_id' => 'Region',
+            'regionName' => Yii::t('app', 'Region'),
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getProvince()
+    public function getProvince()//for province_id
     {
         return $this->hasOne(Province::className(), ['region_id' => 'province_id']);
+    }
+        public function getProvinceName(){//for province_code
+        return $this->province->province_code;
+    }
+    public function getRegion()//for region_id
+    {
+        return $this->hasOne(Province::className(), ['province_id' => 'city_id']);
+    }
+    public function getRegionName(){//for region_code
+        return $this->region->region_code;
     }
 }
