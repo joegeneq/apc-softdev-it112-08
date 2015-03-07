@@ -1,0 +1,230 @@
+Meeting Location : APC - room203
+
+==================================================================================
+=======================================W03========================================
+==================================================================================
+
+Meeting  Date :   January 28 Start time: 7:30 End Time: 9:30
+
+1. Topics Discussed
+Installation of Xampp, MsysGit, TortoiseGit
+2. Items Agreed Upon
+The group has chosen a project to pursue
+3. Items to be clarified
+What are the requirements needed for choosing the project?
+4. Next Things to Do
+To send an approval letter for the project chosen and available
+5. Conclusion
+Compatibility and specification needed for Yii2 framework
+
+--------------------------------------------------------------------------------------------------------------------
+
+Meeting  Date :   January 31 Start time: 7:30 End Time: 9:30
+
+1. Topics Discussed:
+To ask previous SS/CN111 for project availability
+2. Items Agreed Upon
+Abesamis Eye Clinic Patient Management System will be sent for Sir JoeGene's approval
+3. Items to be clarified
+Will the project be feasible for Software Development?
+4. Next Things to Do
+If approved, check and study the project documentation made by Nicolas, Aclan, Ocampo
+5. Conclusion
+Abesamis Eye Clinic Patient Management System needs to pass the requirements for Software Development 
+
+
+
+==================================================================================
+=======================================W04========================================
+==================================================================================
+
+Meeting  Date :   February 04 Start time: 7:30 End Time: 9:30
+
+1. Topics Discussed
+Abesamis Eye Clinic Patient Management System has been approved by Sir Joegene
+2. Items Agreed Upon
+The group asked previous student developers about the project
+3. Items to be clarified
+Will the client want to continue the project with us?
+4. Next Things to Do
+To visit Sir Tom Abesamis at their clinic
+5. Conclusion
+Abesamis Eye Clinic is approved and needs confirmation with the client
+
+--------------------------------------------------------------------------------------------------------------------
+
+Meeting  Date :   February 07 Start time: 7:30 End Time: 9:30
+
+1. Topics Discussed:
+The project documentation from CsProj2 and ProjMan
+2. Items Agreed Upon
+To reschedule client meeting
+3. Items to be clarified
+The unfinished/addtional features and functionalities of the project
+4. Next Things to Do
+Interview Sir Tom Abesamis about the project
+5. Conclusion
+Abesamis' project documentation and the system built with previous student developers are unfinished.
+
+
+
+==================================================================================
+=======================================W05========================================
+==================================================================================
+
+Meeting  Date :   February 11 Start time: 7:30 End Time: 9:30
+
+1. Topics Discussed
+Learning of yii2 project structure, requirements often and documents needed to be passed
+2. Items Agreed Upon
+Our project panelist and project advisor
+3. Items to be clarified
+Will the chosen project panelist and project advisor agree?
+4. Next Things to Do
+To give the panelist and advisor request form to the professors
+5. Conclusion
+Mostly the requirements and documents needed for the project
+
+--------------------------------------------------------------------------------------------------------------------
+
+Meeting  Date :   February 14 Start time: 7:30 End Time: 9:30
+
+1. Topics Discussed:
+Learning of the flow and behavior of yii2
+2. Items Agreed Upon
+To look for plugin/extension/widget availability for our desired interface
+3. Items to be clarified
+How will we design the database that is compatible for yii2?
+4. Next Things to Do
+To create the database
+5. Conclusion
+Yii2 has existing features that is only an installation-away
+
+
+
+==================================================================================
+=======================================W06========================================
+==================================================================================
+
+Meeting  Date :   February 18 Start time: 7:30 End Time: 9:30
+
+1. Topics Discussed
+Database for the project
+2. Items Agreed Upon
+Abesamis form to be transformed to a database
+3. Items to be clarified
+Some discounts that Abesamis welcomes
+4. Next Things to Do
+How to make the database dynamic since the one made was static
+5. Conclusion
+A dynamic database would be more user-friendly specially to non-IT people
+
+--------------------------------------------------------------------------------------------------------------------
+
+Meeting  Date :   February 21 Start time: 7:30 End Time: 9:30
+
+1. Topics Discussed:
+Database design for a dynamic one
+2. Items Agreed Upon
+Making lots of bridge entities
+3. Items to be clarified
+Is this alright? We have a complicated one.
+4. Next Things to Do
+To login using the database
+5. Conclusion
+A dynamic database is simply complicated
+
+
+
+
+==================================================================================
+=======================================W07========================================
+==================================================================================
+
+Meeting  Date :   February 25 Start time: 7:30 End Time: 9:30
+
+1. Topics Discussed
+Login with database
+2. Items Agreed Upon
+Database login is ok
+3. Items to be clarified
+Do we need to have the forgot username/password?
+4. Next Things to Do
+Search for appropriate input fields
+5. Conclusion
+Database security and authenticity
+
+--------------------------------------------------------------------------------------------------------------------
+
+Meeting  Date :   February 28 Start time: 7:30 End Time: 9:30
+
+1. Topics Discussed:
+Datepicker widget
+2. Items Agreed Upon
+Use of widgets and other plugins
+3. Items to be clarified
+How to convert or make a yii-compatible javascript or jquery
+4. Next Things to Do
+Initial system prototype
+5. Conclusion
+Widgets are easy to use
+
+
+
+==================================================================================
+=======================================W08========================================
+==================================================================================
+
+Meeting  Date :   March 04 Start time: 7:30 End Time: 9:30
+
+1. Topics Discussed
+To use advance template, member task assignment at wiki, preparation of iteration 0 for Saturday and iteration 1
+2. Items Agreed Upon
+The features suited for the system
+3. Items to be clarified
+Product backlog
+4. Next Things to Do
+To finish advance template system prototype for Saturday
+5. Conclusion
+Advance template is needed for the project
+
+--------------------------------------------------------------------------------------------------------------------
+
+Meeting  Date :   March 07 Start time: 7:30 End Time: 9:30
+
+1. Topics Discussed:
+
+2. Items Agreed Upon
+
+3. Items to be clarified
+
+4. Next Things to Do
+
+5. Conclusion
+
+
+
+
+==================================================================================
+=======================================W09========================================
+==================================================================================
+
+==================================================================================
+=======================================W10========================================
+==================================================================================
+
+==================================================================================
+=======================================W11========================================
+==================================================================================
+
+==================================================================================
+=======================================W12========================================
+==================================================================================
+
+==================================================================================
+=======================================W13========================================
+==================================================================================
+
+==================================================================================
+=======================================W14========================================
+==================================================================================
