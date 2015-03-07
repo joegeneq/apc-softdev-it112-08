@@ -1,0 +1,70 @@
+LOGS
+http://www.naeemrana.com/technology/how-to-install-composer-dependency-manager-for-php-in-windows/
+
+
+C:\xampp\htdocs
+1.
+php -r "eval('?>'.file_get_contents('https://getcomposer.org/installer'));"
+
+2.c:\xampp\htdocs\composer.bat
+@ECHO OFF
+SET SUBDIR=%~dp0
+php %SUBDIR%\composer.phar %*
+
+3.
+php composer.phar self-update
+
+4.
+php composer.phar install
+
+5.
+php composer.phar create-project yiisoft/yii2-app-advanced advanced 2.0.0-beta
+
+6.
+cd C:\xampp\htdocs\advanced
+init
+0
+yes
+
+7.
+create database yii2advanced or change for the desired db at
+common/config/main-local.php
+
+8.
+yii migrate
+yes
+
+9.jquery/dist error
+php composer.phar global require "yiisoft/yii2:2.0.*@dev"
+
+
+
+composer global require "fxp/composer-asset-plugin:1.0.0-beta4"
+
+php composer.phar global require "fxp/composer-asset-plugin:1.0.0"
+
+
+
+
+
+apc.csf.ph/phpmyadmin
+
+
+so ito tlga
+copy paste composer sa htdocs
+update ung composer
+php composer.phar create-project --prefer-dist --stability=dev yiisoft/yii2-app-advanced advanced
+
+
+
+ecpms-db(for hosting)
+rename your db
+
+
+
+5.
+php composer.phar create-project --prefer-dist --stability=dev yiisoft/advanced
+or
+php composer.phar create-project yiisoft/yii2-app-advanced advanced 2.0.0-beta
+
+6. http://vegibit.com/how-to-install-the-advanced-template-in-yii2/
