@@ -68,3 +68,39 @@ or
 php composer.phar create-project yiisoft/yii2-app-advanced advanced 2.0.0-beta
 
 6. http://vegibit.com/how-to-install-the-advanced-template-in-yii2/
+
+
+
+----------------k whatever-----------------
+lets generate na!
+
+first, city to backend
+
+model generator
+namespace: backend\models
+
+crud generator
+view path:
+D:\softdev_IT112\apc-softdev-it112-08\application\yii-application\backend\views\<folder>
+
+php composer.phar require "2amigos/yii2-date-picker-widget" "*"
+
+User
+    model      - common
+    controller - frontend backend
+    view       - frontend backend
+
+City
+    model      - backend
+    controller - backend
+    view       - backend
+
+Patient
+    model      - frontend
+    controller - frontend
+    view       - frontend
+
+Contact Lens
+    model      - backend
+    controller - backend
+    view       - backend
