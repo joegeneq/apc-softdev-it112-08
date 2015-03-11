@@ -36,7 +36,7 @@ use backend\models\ContactLens;
 ]);?>
 
     <!--<?= $form->field($model, 'patient_sex')->textInput(['maxlength' => 45]) ?>-->
-    <?= $form->field($model, 'patient_sex')->radioList(array('Male'=>'Male','Female'=>'Female')); ?>
+    <?= $form->field($model, 'patient_sex')->radioList(array('M'=>'Male','F'=>'Female')); ?>
 
     <?= $form->field($model, 'patient_facebook')->textInput(['maxlength' => 45]) ?>
 
@@ -80,7 +80,8 @@ use backend\models\ContactLens;
 
     <?= $form->field($model, 'patient_treatments')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'patient_pregnant')->textInput(['maxlength' => 1]) ?>
+    <!--<?= $form->field($model, 'patient_pregnant')->textInput(['maxlength' => 1]) ?>-->
+    <?= $form->field($model, 'patient_pregnant')->radioList(array('Y'=>'Yes','N'=>'No')); ?>
 
     <!--<?= $form->field($model, 'patient_glasses')->textInput(['maxlength' => 1]) ?>-->
     <?= $form->field($model, 'patient_glasses')->radioList(array('Y'=>'Yes','N'=>'No')); ?>

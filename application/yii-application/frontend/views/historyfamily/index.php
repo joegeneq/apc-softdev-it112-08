@@ -4,19 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\UserSearch */
+/* @var $searchModel frontend\models\HistoryFamilySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Users';
+$this->title = 'History Families';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-index">
+<div class="history-family-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create History Family', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -25,16 +25,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'username',
-            'auth_key',
-            'password_hash',
-            'password_reset_token',
-            // 'email:email',
-            // 'role',
-            // 'status',
-            // 'created_at',
-            // 'updated_at',
+            //'patient_id',
+            [
+            'attribute' => 'patient_id',
+            'label' => 'Patient',
+            'value' => 'patient.patient_lname',
+            'filter' => yii\helpers\ArrayHelper::map(frontend\models\Patient::find()->all(),'patient_id','patient_lname')
+            ],
+            'family_disease_id',
+            'relationship_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

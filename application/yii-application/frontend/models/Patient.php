@@ -169,4 +169,5 @@ class Patient extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Record::className(), ['patient_id' => 'patient_id']);
     }
+
 }

@@ -84,6 +84,9 @@ view path:
 D:\softdev_IT112\apc-softdev-it112-08\application\yii-application\backend\views\<folder>
 
 php composer.phar require "2amigos/yii2-date-picker-widget" "*"
+    model      - 
+    controller - 
+    view       - 
 
 User
     model      - common
@@ -100,7 +103,27 @@ Patient
     controller - frontend
     view       - frontend
 
-Contact Lens
+ContactLens
+    model      - backend
+    controller - backend
+    view       - backend
+
+FamilyDisease
+    model      - backend
+    controller - backend
+    view       - backend
+
+Relationship
+    model      - backend
+    controller - backend
+    view       - backend
+
+HistoryFamily
+    model      - frontend
+    controller - frontend
+    view       - frontend
+
+Sports
     model      - backend
     controller - backend
     view       - backend
