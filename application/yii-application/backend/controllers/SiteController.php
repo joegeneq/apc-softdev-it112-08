@@ -57,7 +57,22 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
-
+	public function actionLogin()
+	{
+   if (!\Yii::$app->user->isGuest) {
+      return $this->goHome();
+   }
+ 
+   $model = new LoginForm();
+   if ($model->load(Yii::$app->request->post()) && $model->loginAdmin()) {
+      return $this->goBack();
+   } else {
+       return $this->render('login', [
+          'model' => $model,
+       ]);
+   }
+}
+/*********************************************
     public function actionLogin()
     {
         if (!\Yii::$app->user->isGuest) {
@@ -73,7 +88,7 @@ class SiteController extends Controller
             ]);
         }
     }
-
+***********************************************/
     public function actionLogout()
     {
         Yii::$app->user->logout();
