@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2015 at 08:03 AM
+-- Generation Time: Apr 22, 2015 at 10:16 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -25,6 +25,40 @@ USE `ecpms-sd`;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `acuity`
+--
+
+CREATE TABLE IF NOT EXISTS `acuity` (
+  `acuity_id` int(11) NOT NULL AUTO_INCREMENT,
+  `acuity_name` varchar(45) NOT NULL,
+  `acuity_description` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`acuity_id`),
+  UNIQUE KEY `acuity_name_UNIQUE` (`acuity_name`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+
+--
+-- Dumping data for table `acuity`
+--
+
+INSERT INTO `acuity` (`acuity_id`, `acuity_name`, `acuity_description`) VALUES
+(1, 'NLP', NULL),
+(2, 'LP', NULL),
+(3, 'HM', NULL),
+(4, '20/800', NULL),
+(5, '20/400', NULL),
+(6, '20/200', NULL),
+(7, '20/100', NULL),
+(8, '20/80', NULL),
+(9, '20/60', NULL),
+(10, '20/40', NULL),
+(11, '20/30', NULL),
+(12, '20/20', NULL),
+(13, '20/15', NULL),
+(14, '20/10', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `city`
 --
 
@@ -34,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `city` (
   `city_code` int(11) DEFAULT NULL,
   PRIMARY KEY (`city_id`),
   UNIQUE KEY `city_name_UNIQUE` (`city_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `city`
@@ -55,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `contact_lens` (
   `contact_lens_name` varchar(45) NOT NULL,
   `contact_lens_description` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`contact_lens_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `contact_lens`
@@ -78,7 +112,20 @@ CREATE TABLE IF NOT EXISTS `design` (
   `design_description` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`design_id`),
   UNIQUE KEY `design_name_UNIQUE` (`design_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data for table `design`
+--
+
+INSERT INTO `design` (`design_id`, `design_name`, `design_description`) VALUES
+(1, 'CR39', NULL),
+(2, 'Hi-index', NULL),
+(3, 'Polycarb', NULL),
+(4, 'Anti-UV', NULL),
+(7, 'MC', NULL),
+(8, 'Progressive', NULL),
+(9, 'DV', NULL);
 
 -- --------------------------------------------------------
 
@@ -105,7 +152,23 @@ CREATE TABLE IF NOT EXISTS `eoms` (
   `eoms_id` int(11) NOT NULL AUTO_INCREMENT,
   `eoms_name` varchar(45) NOT NULL,
   PRIMARY KEY (`eoms_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+
+--
+-- Dumping data for table `eoms`
+--
+
+INSERT INTO `eoms` (`eoms_id`, `eoms_name`) VALUES
+(1, 'full_safe'),
+(2, 'esophoria'),
+(3, 'esotropia'),
+(4, 'exotropia'),
+(5, 'hyperphoria'),
+(6, 'hypertropia'),
+(7, 'hypophoria'),
+(8, 'hypotropia'),
+(9, 'cyclophoria'),
+(10, 'cyclotropia');
 
 -- --------------------------------------------------------
 
@@ -234,7 +297,17 @@ CREATE TABLE IF NOT EXISTS `instruction` (
   `instruction_name` varchar(45) NOT NULL,
   `instruction_description` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`instruction_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `instruction`
+--
+
+INSERT INTO `instruction` (`instruction_id`, `instruction_name`, `instruction_description`) VALUES
+(1, 'constant wear', NULL),
+(2, 'far only', NULL),
+(3, 'near only', NULL),
+(4, 'intermediate', NULL);
 
 -- --------------------------------------------------------
 
@@ -246,30 +319,30 @@ CREATE TABLE IF NOT EXISTS `insurance` (
   `insurance_id` int(11) NOT NULL AUTO_INCREMENT,
   `insurance_name` varchar(45) NOT NULL,
   `insurance_description` varchar(45) DEFAULT NULL,
-  `insurance_percentage` decimal(5,2) NOT NULL,
+  `insurance_percentage` decimal(5,2) DEFAULT NULL,
   PRIMARY KEY (`insurance_id`),
   UNIQUE KEY `insurance_name_UNIQUE` (`insurance_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `insurance`
 --
 
 INSERT INTO `insurance` (`insurance_id`, `insurance_name`, `insurance_description`, `insurance_percentage`) VALUES
-(1, 'Maxicare', NULL, '0.00'),
-(2, 'Cocolife', NULL, '0.00'),
-(3, 'ValuCare', NULL, '0.00'),
-(4, 'Prudentialife', NULL, '0.00'),
-(5, 'AsianLife', NULL, '0.00'),
-(6, 'Medserve', NULL, '0.00'),
-(7, 'St. Patrick', NULL, '0.00'),
-(8, 'Philcare', NULL, '0.00'),
-(9, 'AA International', NULL, '0.00'),
-(10, 'Living Well', NULL, '0.00'),
-(11, 'SM Global Pinoy', NULL, '0.00'),
-(12, 'Walk-in', NULL, '0.00'),
-(13, 'Established Patient', NULL, '0.00'),
-(14, 'Others', NULL, '0.00');
+(1, 'Maxicare', NULL, NULL),
+(2, 'Cocolife', NULL, NULL),
+(3, 'ValuCare', NULL, NULL),
+(4, 'Prudentialife', NULL, NULL),
+(5, 'AsianLife', NULL, NULL),
+(6, 'Medserve', NULL, NULL),
+(7, 'St. Patrick', NULL, NULL),
+(8, 'Philcare', NULL, NULL),
+(9, 'AA International', NULL, NULL),
+(10, 'Living Well', NULL, NULL),
+(11, 'SM Global Pinoy', NULL, NULL),
+(12, 'Walk-in', NULL, NULL),
+(13, 'Established Patient', NULL, NULL),
+(14, 'Others', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -483,6 +556,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `sties_chalazion` tinyint(1) NOT NULL,
   `flashes_floaters_of_vision` tinyint(1) NOT NULL,
   `tired_eyes` tinyint(1) NOT NULL,
+  `sports` longtext,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username_UNIQUE` (`username`),
   KEY `fk_user_city1_idx` (`city_city_id`),
@@ -501,7 +575,17 @@ CREATE TABLE IF NOT EXISTS `wear_mode` (
   `wear_mode_description` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`wear_mode_id`),
   UNIQUE KEY `wear_mode_name_UNIQUE` (`wear_mode_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `wear_mode`
+--
+
+INSERT INTO `wear_mode` (`wear_mode_id`, `wear_mode_name`, `wear_mode_description`) VALUES
+(1, 'daily', NULL),
+(2, 'weekly', NULL),
+(3, 'monthly', NULL),
+(4, 'extended', NULL);
 
 --
 -- Constraints for dumped tables
