@@ -47,7 +47,6 @@ AppAsset::register($this);
                         ['label' => 'About', 'url' => ['/site/about']],
                         ['label' => 'Contact', 'url' => ['/site/contact']],
                         ['label' => 'Account', 'url' => ['/user/view']],
-                        ['label' => 'Disease', 'url' => ['/familydisease/index']],  
                     ];
                 }
                 if(Yii::$app->user->identity->role == 20){//EMPLOYEE
