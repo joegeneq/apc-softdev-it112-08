@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2015 at 10:16 AM
+-- Generation Time: Apr 23, 2015 at 08:12 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -126,21 +126,6 @@ INSERT INTO `design` (`design_id`, `design_name`, `design_description`) VALUES
 (7, 'MC', NULL),
 (8, 'Progressive', NULL),
 (9, 'DV', NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `discount`
---
-
-CREATE TABLE IF NOT EXISTS `discount` (
-  `discount_id` int(11) NOT NULL AUTO_INCREMENT,
-  `discount_name` varchar(45) NOT NULL,
-  `discount_description` varchar(45) DEFAULT NULL,
-  `discount_percentage` decimal(5,2) NOT NULL,
-  PRIMARY KEY (`discount_id`),
-  UNIQUE KEY `discount_name_UNIQUE` (`discount_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -282,6 +267,7 @@ CREATE TABLE IF NOT EXISTS `evaluation` (
   `f_p_os` varchar(45) NOT NULL,
   `f_ma_od` varchar(45) NOT NULL,
   `f_m_os` varchar(45) NOT NULL,
+  PRIMARY KEY (`record_id`),
   KEY `fk_evaluation_eoms1_idx` (`m_eoms_id`),
   KEY `fk_evaluation_record1_idx` (`record_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -385,6 +371,7 @@ CREATE TABLE IF NOT EXISTS `prescription` (
   `os_color` varchar(45) NOT NULL,
   `wear_mode_id` int(11) DEFAULT NULL,
   `solutions_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`record_id`),
   KEY `fk_prescription_design1_idx` (`design_id`),
   KEY `fk_prescription_instruction1_idx` (`instruction_id`),
   KEY `fk_prescription_wear_mode1_idx` (`wear_mode_id`),
@@ -462,7 +449,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `middlename` varchar(255) DEFAULT NULL,
   `birthday` date NOT NULL,
   `gender` varchar(1) NOT NULL,
-  `city_city_id` int(11) NOT NULL,
+  `city_city_id` int(11) DEFAULT NULL,
   `home_address` varchar(255) NOT NULL,
   `company_address` varchar(255) DEFAULT NULL,
   `company_name` varchar(45) DEFAULT NULL,
@@ -561,7 +548,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   UNIQUE KEY `username_UNIQUE` (`username`),
   KEY `fk_user_city1_idx` (`city_city_id`),
   KEY `fk_user_contact_lens1_idx` (`contact_lens_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `role`, `status`, `created_at`, `updated_at`, `firstname`, `lastname`, `middlename`, `birthday`, `gender`, `city_city_id`, `home_address`, `company_address`, `company_name`, `cel`, `tel`, `fb`, `allergies`, `medications`, `treatments`, `eyeglasses`, `eyeglasses_age`, `contact_lens`, `contact_lens_age`, `contact_lens_id`, `blindness_grand`, `blindness_parents`, `blindness_siblings`, `blindness_children`, `cataracts_grand`, `cataracts_parents`, `cataracts_siblings`, `cataracts_children`, `crossed_eyes_grand`, `crossed_eyes_parents`, `crossed_eyes_siblings`, `crossed_eyes_children`, `glaucoma_grand`, `glaucoma_parents`, `glaucoma_siblings`, `glaucoma_children`, `macular_degeneration_grand`, `macular_degeneration_parents`, `macular_degeneration_siblings`, `macular_degeneration_children`, `retinal_detachment_grand`, `retinal_detachment_parents`, `retinal_detachment_siblings`, `retinal_detachment_children`, `arthritis_grand`, `arthritis_parents`, `arthritis_siblings`, `arthritis_children`, `cancer_grand`, `cancer_parents`, `cancer_siblings`, `cancer_children`, `diabetes_grand`, `diabetes_parents`, `diabetes_siblings`, `diabetes_children`, `heart_disease_grand`, `heart_disease_parents`, `heart_disease_siblings`, `heart_disease_children`, `high_blood_pressure_grand`, `high_blood_pressure_parents`, `high_blood_pressure_siblings`, `high_blood_pressure_children`, `kidney_disease_grand`, `kidney_disease_parents`, `kidney_disease_siblings`, `kidney_disease_children`, `lupus_grand`, `lupus_parents`, `lupus_siblings`, `lupus_children`, `thyroid_disease_grand`, `thyroid_disease_parents`, `thyroid_disease_siblings`, `thyroid_disease_children`, `others`, `headaches`, `migrains`, `seizures`, `loss_of_vision`, `blurred_vision`, `distorted_vision`, `loss_of_side_vision`, `double_vision`, `dryness_vision`, `mucous_discharge`, `redness`, `sandy_gritty_feeling`, `itching`, `burning`, `foreign_body_sensation`, `excess_tearing_watering`, `glare_light_sensitivity`, `eye_pain_soreness`, `chronic_infection_of_eye_or_lid`, `sties_chalazion`, `flashes_floaters_of_vision`, `tired_eyes`, `sports`) VALUES
+(2, 'admin', 'On135VxltIPpZ2jDkgMICxuGjckwDI4C', '$2y$13$d7n/3e8wZGszEI./ebDgT.wN/0/lG.viDF26ZYIyZeSglKIry0AgW', NULL, 'admin@gmail.com', 10, 10, 0, 0, 'admin', 'admin', 'admin', '0000-00-00', '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, '', NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -604,9 +598,9 @@ ALTER TABLE `evaluation`
 ALTER TABLE `prescription`
   ADD CONSTRAINT `fk_prescription_design1` FOREIGN KEY (`design_id`) REFERENCES `design` (`design_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_prescription_instruction1` FOREIGN KEY (`instruction_id`) REFERENCES `instruction` (`instruction_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_prescription_wear_mode1` FOREIGN KEY (`wear_mode_id`) REFERENCES `wear_mode` (`wear_mode_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_prescription_record1` FOREIGN KEY (`record_id`) REFERENCES `record` (`record_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_prescription_solutions1` FOREIGN KEY (`solutions_id`) REFERENCES `solutions` (`solutions_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_prescription_record1` FOREIGN KEY (`record_id`) REFERENCES `record` (`record_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_prescription_wear_mode1` FOREIGN KEY (`wear_mode_id`) REFERENCES `wear_mode` (`wear_mode_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `record`
