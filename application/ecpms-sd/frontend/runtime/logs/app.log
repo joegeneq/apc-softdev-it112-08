@@ -20989,3 +20989,135 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1429769174.798
     'REQUEST_TIME' => 1429769174
 ]
+2015-04-24 05:33:09 [::1][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The file or directory to be published does not exist: C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd/vendor\bower/jquery/dist' in C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\web\AssetManager.php:407
+Stack trace:
+#0 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\web\AssetBundle.php(162): yii\web\AssetManager->publish('C:\\Users\\fdhorc...', Array)
+#1 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\web\AssetManager.php(230): yii\web\AssetBundle->publish(Object(yii\web\AssetManager))
+#2 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\web\AssetManager.php(201): yii\web\AssetManager->loadBundle('yii\\web\\JqueryA...', Array, true)
+#3 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\web\View.php(284): yii\web\AssetManager->getBundle('yii\\web\\JqueryA...')
+#4 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\web\View.php(289): yii\web\View->registerAssetBundle('yii\\web\\JqueryA...', NULL)
+#5 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\web\View.php(289): yii\web\View->registerAssetBundle('yii\\web\\YiiAsse...', NULL)
+#6 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\web\AssetBundle.php(118): yii\web\View->registerAssetBundle('frontend\\assets...')
+#7 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\frontend\views\layouts\main.php(12): yii\web\AssetBundle::register(Object(yii\web\View))
+#8 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\base\View.php(325): require('C:\\Users\\fdhorc...')
+#9 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('C:\\Users\\fdhorc...', Array)
+#10 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\base\Controller.php(382): yii\base\View->renderFile('C:\\Users\\fdhorc...', Array, Object(frontend\controllers\SiteController))
+#11 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\base\Controller.php(368): yii\base\Controller->renderContent('<div class="sit...')
+#12 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\frontend\controllers\SiteController.php(78): yii\base\Controller->render('index')
+#13 [internal function]: frontend\controllers\SiteController->actionIndex()
+#14 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#15 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#16 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#17 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('', Array)
+#18 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\frontend\web\index.php(18): yii\base\Application->run()
+#20 {main}
+2015-04-24 05:33:07 [::1][-][-][info][application] $_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseGit\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/ecpms-sd/frontend/web/index.php'
+    'REMOTE_PORT' => '49158'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/ecpms-sd/frontend/web/index.php'
+    'SCRIPT_NAME' => '/ecpms-sd/frontend/web/index.php'
+    'PHP_SELF' => '/ecpms-sd/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1429846387.337
+    'REQUEST_TIME' => 1429846387
+]
+2015-04-24 05:38:12 [::1][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The file or directory to be published does not exist: C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd/vendor\bower/jquery/dist' in C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\web\AssetManager.php:407
+Stack trace:
+#0 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\web\AssetBundle.php(162): yii\web\AssetManager->publish('C:\\Users\\fdhorc...', Array)
+#1 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\web\AssetManager.php(230): yii\web\AssetBundle->publish(Object(yii\web\AssetManager))
+#2 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\web\AssetManager.php(201): yii\web\AssetManager->loadBundle('yii\\web\\JqueryA...', Array, true)
+#3 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\web\View.php(284): yii\web\AssetManager->getBundle('yii\\web\\JqueryA...')
+#4 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\web\View.php(289): yii\web\View->registerAssetBundle('yii\\web\\JqueryA...', NULL)
+#5 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\web\View.php(289): yii\web\View->registerAssetBundle('yii\\web\\YiiAsse...', NULL)
+#6 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\web\AssetBundle.php(118): yii\web\View->registerAssetBundle('frontend\\assets...')
+#7 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\frontend\views\layouts\main.php(12): yii\web\AssetBundle::register(Object(yii\web\View))
+#8 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\base\View.php(325): require('C:\\Users\\fdhorc...')
+#9 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('C:\\Users\\fdhorc...', Array)
+#10 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\base\Controller.php(382): yii\base\View->renderFile('C:\\Users\\fdhorc...', Array, Object(frontend\controllers\SiteController))
+#11 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\base\Controller.php(368): yii\base\Controller->renderContent('<div class="sit...')
+#12 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\frontend\controllers\SiteController.php(78): yii\base\Controller->render('index')
+#13 [internal function]: frontend\controllers\SiteController->actionIndex()
+#14 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#15 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#16 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#17 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('', Array)
+#18 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 C:\Users\fdhorca\Desktop\apc-softdev-it112-08\application\ecpms-sd\frontend\web\index.php(18): yii\base\Application->run()
+#20 {main}
+2015-04-24 05:38:12 [::1][-][-][info][application] $_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseGit\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win32) OpenSSL/1.0.1l PHP/5.6.8'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/ecpms-sd/frontend/web/index.php'
+    'REMOTE_PORT' => '50120'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/ecpms-sd/frontend/web/index.php'
+    'SCRIPT_NAME' => '/ecpms-sd/frontend/web/index.php'
+    'PHP_SELF' => '/ecpms-sd/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1429846692.032
+    'REQUEST_TIME' => 1429846692
+]
