@@ -35,7 +35,21 @@ CREATE TABLE IF NOT EXISTS `acuity` (
   PRIMARY KEY (`acuity_id`),
   UNIQUE KEY `acuity_name_UNIQUE` (`acuity_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
+INSERT INTO `acuity` (`acuity_id`, `acuity_name`, `acuity_description`) VALUES
+(1, 'NLP', NULL),
+(2, 'LP', NULL),
+(3, 'HM', NULL),
+(4, '20/800', NULL),
+(5, '20/400', NULL),
+(6, '20/200', NULL),
+(7, '20/100', NULL),
+(8, '20/80', NULL),
+(9, '20/60', NULL),
+(10, '20/40', NULL),
+(11, '20/30', NULL),
+(12, '20/20', NULL),
+(13, '20/15', NULL),
+(14, '20/10', NULL);
 -- --------------------------------------------------------
 
 --
@@ -49,7 +63,9 @@ CREATE TABLE IF NOT EXISTS `city` (
   PRIMARY KEY (`city_id`),
   UNIQUE KEY `city_name_UNIQUE` (`city_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
+INSERT INTO `city` (`city_id`, `city_name`, `city_code`) VALUES
+(1, 'Makati', 1200),
+(2, 'Pasay', 1300);
 -- --------------------------------------------------------
 
 --
@@ -62,7 +78,10 @@ CREATE TABLE IF NOT EXISTS `contact_lens` (
   `contact_lens_description` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`contact_lens_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
+INSERT INTO `contact_lens` (`contact_lens_id`, `contact_lens_name`, `contact_lens_description`) VALUES
+(1, 'Rigid', NULL),
+(2, 'Soft', NULL),
+(3, 'Other', NULL);
 -- --------------------------------------------------------
 
 --
@@ -76,7 +95,14 @@ CREATE TABLE IF NOT EXISTS `design` (
   PRIMARY KEY (`design_id`),
   UNIQUE KEY `design_name_UNIQUE` (`design_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
+INSERT INTO `design` (`design_id`, `design_name`, `design_description`) VALUES
+(1, 'CR39', NULL),
+(2, 'Hi-index', NULL),
+(3, 'Polycarb', NULL),
+(4, 'Anti-UV', NULL),
+(7, 'MC', NULL),
+(8, 'Progressive', NULL),
+(9, 'DV', NULL);
 -- --------------------------------------------------------
 
 --
@@ -104,7 +130,17 @@ CREATE TABLE IF NOT EXISTS `eoms` (
   `eoms_description` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`eoms_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
+INSERT INTO `eoms` (`eoms_id`, `eoms_name`) VALUES
+(1, 'full_safe'),
+(2, 'esophoria'),
+(3, 'esotropia'),
+(4, 'exotropia'),
+(5, 'hyperphoria'),
+(6, 'hypertropia'),
+(7, 'hypophoria'),
+(8, 'hypotropia'),
+(9, 'cyclophoria'),
+(10, 'cyclotropia');
 -- --------------------------------------------------------
 
 --
@@ -117,7 +153,11 @@ CREATE TABLE IF NOT EXISTS `instruction` (
   `instruction_description` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`instruction_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
+INSERT INTO `instruction` (`instruction_id`, `instruction_name`, `instruction_description`) VALUES
+(1, 'constant wear', NULL),
+(2, 'far only', NULL),
+(3, 'near only', NULL),
+(4, 'intermediate', NULL);
 -- --------------------------------------------------------
 
 --
@@ -132,7 +172,21 @@ CREATE TABLE IF NOT EXISTS `insurance` (
   PRIMARY KEY (`insurance_id`),
   UNIQUE KEY `insurance_name_UNIQUE` (`insurance_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
+INSERT INTO `insurance` (`insurance_id`, `insurance_name`, `insurance_description`, `insurance_percentage`) VALUES
+(1, 'Maxicare', NULL, NULL),
+(2, 'Cocolife', NULL, NULL),
+(3, 'ValuCare', NULL, NULL),
+(4, 'Prudentialife', NULL, NULL),
+(5, 'AsianLife', NULL, NULL),
+(6, 'Medserve', NULL, NULL),
+(7, 'St. Patrick', NULL, NULL),
+(8, 'Philcare', NULL, NULL),
+(9, 'AA International', NULL, NULL),
+(10, 'Living Well', NULL, NULL),
+(11, 'SM Global Pinoy', NULL, NULL),
+(12, 'Walk-in', NULL, NULL),
+(13, 'Established Patient', NULL, NULL),
+(14, 'Others', NULL, NULL);
 -- --------------------------------------------------------
 
 --
@@ -477,7 +531,11 @@ CREATE TABLE IF NOT EXISTS `wear_mode` (
   PRIMARY KEY (`wear_mode_id`),
   UNIQUE KEY `wear_mode_name_UNIQUE` (`wear_mode_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
+INSERT INTO `wear_mode` (`wear_mode_id`, `wear_mode_name`, `wear_mode_description`) VALUES
+(1, 'daily', NULL),
+(2, 'weekly', NULL),
+(3, 'monthly', NULL),
+(4, 'extended', NULL);
 --
 -- Constraints for dumped tables
 --
