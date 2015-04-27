@@ -103,20 +103,6 @@ INSERT INTO `design` (`design_id`, `design_name`, `design_description`) VALUES
 (7, 'MC', NULL),
 (8, 'Progressive', NULL),
 (9, 'DV', NULL);
--- --------------------------------------------------------
-
---
--- Table structure for table `discount`
---
-
-CREATE TABLE IF NOT EXISTS `discount` (
-  `discount_id` int(11) NOT NULL AUTO_INCREMENT,
-  `discount_name` varchar(45) NOT NULL,
-  `discount_description` varchar(45) DEFAULT NULL,
-  `discount_percentage` decimal(5,2) NOT NULL,
-  PRIMARY KEY (`discount_id`),
-  UNIQUE KEY `discount_name_UNIQUE` (`discount_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
