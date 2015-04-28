@@ -403,7 +403,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `middlename` varchar(255) DEFAULT NULL,
   `birthday` date NOT NULL,
   `gender` varchar(1) NOT NULL,
-  `city_city_id` int(11) NOT NULL,
+  `city_id` int(11) DEFAULT NULL,
   `home_address` varchar(255) NOT NULL,
   `company_address` varchar(255) DEFAULT NULL,
   `company_name` varchar(45) DEFAULT NULL,
@@ -500,7 +500,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `sports` longtext,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username_UNIQUE` (`username`),
-  KEY `fk_user_city1_idx` (`city_city_id`),
+  KEY `fk_user_city1_idx` (`city_id`),
   KEY `fk_user_contact_lens1_idx` (`contact_lens_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -543,7 +543,7 @@ ALTER TABLE `record`
 -- Constraints for table `user`
 --
 ALTER TABLE `user`
-  ADD CONSTRAINT `fk_user_city1` FOREIGN KEY (`city_city_id`) REFERENCES `city` (`city_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_user_city1` FOREIGN KEY (`city_id`) REFERENCES `city` (`city_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_user_contact_lens1` FOREIGN KEY (`contact_lens_id`) REFERENCES `contact_lens` (`contact_lens_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
