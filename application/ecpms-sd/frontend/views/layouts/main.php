@@ -42,11 +42,14 @@ AppAsset::register($this);
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {
                 if(Yii::$app->user->identity->role == 10){//ADMIN
+                    //$url = Url::to(['user/view', 'id' => Yii::$app->user->identity->id]);
                     $menuItems = [
                         ['label' => 'Home', 'url' => ['/site/index']],
                         ['label' => 'About', 'url' => ['/site/about']],
                         ['label' => 'Contact', 'url' => ['/site/contact']],
-                        ['label' => 'Account', 'url' => ['/user/view']],
+                        //['label' => 'Account', 'url' => ['/user/view' . '&id=' . Yii::$app->user->identity->id . '']],
+                        //['label' => 'Account', Yii::$app->urlManager->createUrl(['/city/view', 'id' => Yii::$app->user->identity->id])]
+                        ['label' => 'Account', 'url' => ['/user/view', 'id' => Yii::$app->user->identity->id]],
                     ];
                 }
                 if(Yii::$app->user->identity->role == 20){//EMPLOYEE
