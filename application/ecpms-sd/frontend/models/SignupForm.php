@@ -12,6 +12,10 @@ class SignupForm extends Model
 {
     public $username;
     public $email;
+    public $role;//
+    public $status;
+    public $created_at;
+    public $updated_at;//
     public $password;
     public $lastname;
     public $firstname;
@@ -26,8 +30,13 @@ class SignupForm extends Model
     public $tel;
     public $fb;
     public $allergies;
+    public $medications;
+    public $treatments;
     public $eyeglasses;
+    public $eyeglasses_age;//
     public $contact_lens;
+    public $contact_lens_age;//
+    public $contact_lens_id;//
     public $blindness_grand;
     public $blindness_parents;
     public $blindness_siblings;
@@ -84,6 +93,7 @@ class SignupForm extends Model
     public $thyroid_disease_parents;
     public $thyroid_disease_siblings;
     public $thyroid_disease_children;
+    public $others;//
     public $headaches;
     public $migrains;
     public $seizures;
@@ -106,6 +116,7 @@ class SignupForm extends Model
     public $sties_chalazion;
     public $flashes_floaters_of_vision;
     public $tired_eyes;
+    public $sports;//
     /**
      * @inheritdoc
      */
@@ -117,7 +128,6 @@ class SignupForm extends Model
             ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This username has already been taken.'],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
-            //[['firstname', 'lastname'], 'required'],
             [['firstname', 'lastname', 'middlename'], 'string', 'max' => 255],
 
             ['email', 'filter', 'filter' => 'trim'],
@@ -151,6 +161,10 @@ class SignupForm extends Model
             $user = new User();
             $user->username = $this->username;
             $user->email = $this->email;
+            $user->role = $this->role;
+            $user->status = $this->status;
+            $user->created_at = $this->created_at;
+            $user->updated_at = $this->updated_at;
             $user->setPassword($this->password);
             $user->firstname = $this->firstname;
             $user->lastname = $this->lastname;
@@ -165,6 +179,94 @@ class SignupForm extends Model
             $user->tel = $this->tel;
             $user->fb = $this->fb;
             $user->allergies = $this->allergies;
+            $user->medications = $this->medications;
+            $user->treatments = $this->treatments;
+
+            $user->eyeglasses = $this->eyeglasses;
+            $user->eyeglasses_age = $this->eyeglasses_age;
+            $user->contact_lens = $this->contact_lens;
+            $user->contact_lens_age = $this->contact_lens_age;
+            $user->contact_lens_id = $this->contact_lens_id;
+            $user->blindness_grand = $this->blindness_grand;
+            $user->blindness_parents = $this->blindness_parents;
+            $user->blindness_siblings = $this->blindness_siblings;
+            $user->blindness_children = $this->blindness_children;
+            $user->cataracts_grand = $this->cataracts_grand;
+            $user->cataracts_parents = $this->cataracts_parents;
+            $user->cataracts_siblings = $this->cataracts_siblings;
+            $user->cataracts_children = $this->cataracts_children;
+            $user->crossed_eyes_grand = $this->crossed_eyes_grand;
+            $user->crossed_eyes_parents = $this->crossed_eyes_parents;
+            $user->crossed_eyes_siblings = $this->crossed_eyes_siblings;
+            $user->crossed_eyes_children = $this->crossed_eyes_children;
+            $user->glaucoma_grand = $this->glaucoma_grand;
+            $user->glaucoma_parents = $this->glaucoma_parents;
+            $user->glaucoma_siblings = $this->glaucoma_siblings;
+            $user->glaucoma_children = $this->glaucoma_children;
+            $user->macular_degeneration_grand = $this->macular_degeneration_grand;
+            $user->macular_degeneration_parents = $this->macular_degeneration_parents;
+            $user->macular_degeneration_siblings = $this->macular_degeneration_siblings;
+            $user->macular_degeneration_children = $this->macular_degeneration_children;
+            $user->retinal_detachment_grand = $this->retinal_detachment_grand;
+            $user->retinal_detachment_parents = $this->retinal_detachment_parents;
+            $user->retinal_detachment_siblings = $this->retinal_detachment_siblings;
+            $user->retinal_detachment_children = $this->retinal_detachment_children;
+            $user->arthritis_grand = $this->arthritis_grand;
+            $user->arthritis_parents = $this->arthritis_parents;
+            $user->arthritis_siblings = $this->arthritis_siblings;
+            $user->arthritis_children = $this->arthritis_children;
+            $user->cancer_grand = $this->cancer_grand;
+            $user->cancer_parents = $this->cancer_parents;
+            $user->cancer_siblings = $this->cancer_siblings;
+            $user->cancer_children = $this->cancer_children;
+            $user->diabetes_grand = $this->diabetes_grand;
+            $user->diabetes_parents = $this->diabetes_parents;
+            $user->diabetes_siblings = $this->diabetes_siblings;
+            $user->diabetes_children = $this->diabetes_children;
+            $user->heart_disease_grand = $this->heart_disease_grand;
+            $user->heart_disease_parents = $this->heart_disease_parents;
+            $user->heart_disease_siblings = $this->heart_disease_siblings;
+            $user->heart_disease_children = $this->heart_disease_children;
+            $user->high_blood_pressure_grand = $this->high_blood_pressure_grand;
+            $user->high_blood_pressure_parents = $this->high_blood_pressure_parents;
+            $user->high_blood_pressure_siblings = $this->high_blood_pressure_siblings;
+            $user->high_blood_pressure_children = $this->high_blood_pressure_children;
+            $user->kidney_disease_grand = $this->kidney_disease_grand;
+            $user->kidney_disease_parents = $this->kidney_disease_parents;
+            $user->kidney_disease_siblings = $this->kidney_disease_siblings;
+            $user->kidney_disease_children = $this->kidney_disease_children;
+            $user->lupus_grand = $this->lupus_grand;
+            $user->lupus_parents = $this->lupus_parents;
+            $user->lupus_siblings = $this->lupus_siblings;
+            $user->lupus_children = $this->lupus_children;
+            $user->thyroid_disease_grand = $this->thyroid_disease_grand;
+            $user->thyroid_disease_parents = $this->thyroid_disease_parents;
+            $user->thyroid_disease_siblings = $this->thyroid_disease_siblings;
+            $user->thyroid_disease_children = $this->thyroid_disease_children;
+            $user->others = $this->others;
+            $user->headaches = $this->headaches;
+            $user->migrains = $this->migrains;
+            $user->seizures = $this->seizures;
+            $user->loss_of_vision = $this->loss_of_vision;
+            $user->blurred_vision = $this->blurred_vision;
+            $user->distorted_vision = $this->distorted_vision;
+            $user->loss_of_side_vision = $this->loss_of_side_vision;
+            $user->double_vision = $this->double_vision;
+            $user->dryness_vision = $this->dryness_vision;
+            $user->mucous_discharge = $this->mucous_discharge;
+            $user->redness = $this->redness;
+            $user->sandy_gritty_feeling = $this->sandy_gritty_feeling;
+            $user->itching = $this->itching;
+            $user->burning = $this->burning;
+            $user->foreign_body_sensation = $this->foreign_body_sensation;
+            $user->excess_tearing_watering = $this->excess_tearing_watering;
+            $user->glare_light_sensitivity = $this->glare_light_sensitivity;
+            $user->eye_pain_soreness = $this->eye_pain_soreness;
+            $user->chronic_infection_of_eye_or_lid = $this->chronic_infection_of_eye_or_lid;
+            $user->sties_chalazion = $this->sties_chalazion;
+            $user->flashes_floaters_of_vision = $this->flashes_floaters_of_vision;
+            $user->tired_eyes = $this->tired_eyes;
+            $user->sports = $this->sports;
             $user->generateAuthKey();
             if ($user->save()) {
                 return $user;

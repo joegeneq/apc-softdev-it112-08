@@ -24,16 +24,20 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= $form->field($model, 'firstname') ?>
                 <?= $form->field($model, 'middlename') ?>
 
-    <?= $form->field($model, 'birthday') ?>
-    <?= $form->field($model, 'gender') ?>
-    <?= $form->field($model, 'city_id') ?>
-    <?= $form->field($model, 'home_address') ?>
-    <?= $form->field($model, 'company_address') ?>
-    <?= $form->field($model, 'company_name') ?>
-    <?= $form->field($model, 'cel') ?>
-    <?= $form->field($model, 'tel') ?>
-    <?= $form->field($model, 'fb') ?>
-    <?= $form->field($model, 'allergies') ?>
+                <?= $form->field($model, 'birthday') ?>
+                <?= $form->field($model, 'gender') ?>
+                <?= $form->field($model, 'city_id') ?>
+                <?= $form->field($model, 'home_address') ?>
+                <?= $form->field($model, 'company_address') ?>
+                <?= $form->field($model, 'company_name') ?>
+                <?= $form->field($model, 'cel') ?>
+                <?= $form->field($model, 'tel') ?>
+                <?= $form->field($model, 'fb') ?>
+                <?= $form->field($model, 'allergies')->textarea(['rows' => 6]) ?>
+                <?= $form->field($model, 'medications')->textarea(['rows' => 6]) ?>
+                <?= $form->field($model, 'treatments')->textarea(['rows' => 6]) ?>
+
+    
                 <div class="form-group">
                     <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
                 </div>
