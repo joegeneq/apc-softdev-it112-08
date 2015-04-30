@@ -208,7 +208,7 @@ class Record extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'patient_id' => 'Patient ID',
+            'patient_id' => 'Lastname',
             'employee_id' => 'Employee ID',
             'record_id' => 'Record ID',
             'patient_signature' => 'Patient Signature',

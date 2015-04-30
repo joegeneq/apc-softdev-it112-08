@@ -1,8 +1,9 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
-
+use common\models\User;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Record */
 /* @var $form yii\widgets\ActiveForm */
@@ -11,16 +12,39 @@ use yii\widgets\ActiveForm;
 <div class="record-form">
 
     <?php $form = ActiveForm::begin(); ?>
+<center><table><tr><td style="width: 300px;"><?php
+        $patients=User::find()->all();
+        $listData=ArrayHelper::map($patients, 'id', 'lastname');
+        echo $form->field($model, 'patient_id')->dropDownList(
+            $listData,['prompt'=>'Lastname']);
+        ?></td>
+                <td style="width: 300px;"><?php
+        $patients=User::find()->all();
+        $listData=ArrayHelper::map($patients, 'id', 'firstname');
+        echo $form->field($model, 'patient_id')->dropDownList(
+            $listData,['prompt'=>'Firstname']);
+    ?></td>
+                <td style="width: 300px;"><?php
+        $patients=User::find()->all();
+        $listData=ArrayHelper::map($patients, 'id', 'middlename');
+        echo $form->field($model, 'patient_id')->dropDownList(
+            $listData,['prompt'=>'Middlename']);
+    ?></td></tr>
+    <tr><td style="width: 300px;"><?php
+        $employees=User::find()->all();
+        $listData=ArrayHelper::map($employees, 'id', 'lastname');
+        echo $form->field($model, 'employee_id')->dropDownList(
+            $listData,['prompt'=>'Employee']);
+        ?></td>
+                <td style="width: 300px;"><?= $form->field($model, 'employee_signature')->textInput() ?></td></tr></table></center>
+    
 
-    <?= $form->field($model, 'patient_id')->textInput() ?>
-
-    <?= $form->field($model, 'employee_id')->textInput() ?>
 
     <?= $form->field($model, 'patient_signature')->textInput() ?>
 
     <?= $form->field($model, 'agreed_date')->textInput() ?>
 
-    <?= $form->field($model, 'employee_signature')->textInput() ?>
+    
 
     <?= $form->field($model, 'complaints')->textarea(['rows' => 6]) ?>
 
