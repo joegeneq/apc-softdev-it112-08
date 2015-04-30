@@ -40,7 +40,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'gender')->textInput(['maxlength' => 1]) ?>
 
-    <?= $form->field($model, 'city_city_id')->textInput() ?>
+    <?= $form->field($model, 'city_id')->textInput() ?>
 
     <?= $form->field($model, 'home_address')->textInput(['maxlength' => 255]) ?>
 

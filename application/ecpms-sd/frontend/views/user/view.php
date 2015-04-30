@@ -2,14 +2,11 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\User */
 
 $this->title = $model->id;
-//$this->title = Yii::t$app->user->identity->id
-//Yii::t('user', 'Sign up')
 $this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -46,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'middlename',
             'birthday',
             'gender',
-            'city_city_id',
+            'city_id',
             'home_address',
             'company_address',
             'company_name',

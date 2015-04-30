@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'middlename',
             // 'birthday',
             // 'gender',
-            // 'city_city_id',
+            // 'city_id',
             // 'home_address',
             // 'company_address',
             // 'company_name',

@@ -45,7 +45,7 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'gender') ?>
 
-    <?php // echo $form->field($model, 'city_city_id') ?>
+    <?php // echo $form->field($model, 'city_id') ?>
 
     <?php // echo $form->field($model, 'home_address') ?>
 
