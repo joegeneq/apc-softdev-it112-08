@@ -160,6 +160,14 @@ CREATE TABLE IF NOT EXISTS `ecpms-sd`.`design` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
+INSERT INTO `design` (`id`, `design_name`, `design_description`) VALUES
+(1, 'CR39', NULL),
+(2, 'Hi-index', NULL),
+(3, 'Polycarb', NULL),
+(4, 'Anti-UV', NULL),
+(7, 'MC', NULL),
+(8, 'Progressive', NULL),
+(9, 'DV', NULL);
 
 -- -----------------------------------------------------
 -- Table `ecpms-sd`.`instruction`
