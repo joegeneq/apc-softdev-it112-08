@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `eoms` (
 -- Dumping data for table `eoms`
 --
 
-INSERT INTO `eoms` (`eoms_id`, `eoms_name`) VALUES
+INSERT INTO `eoms` (`id`, `eoms_name`) VALUES
 (1, 'full_safe'),
 (2, 'esophoria'),
 (3, 'esotropia'),
