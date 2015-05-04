@@ -80,6 +80,11 @@ CREATE TABLE IF NOT EXISTS `ecpms-sd`.`contact_lens` (
   PRIMARY KEY (`contact_lens_id`))
 ENGINE = InnoDB;
 
+INSERT INTO `contact_lens` (`contact_lens_id`, `contact_lens_name`, `contact_lens_description`) VALUES
+(1, 'Rigid', NULL),
+(2, 'Soft', NULL),
+(3, 'Other', NULL);
+
 
 -- -----------------------------------------------------
 -- Table `ecpms-sd`.`city`
