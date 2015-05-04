@@ -27,11 +27,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `insurance` (
-  `insurance_id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `insurance_name` varchar(45) NOT NULL,
   `insurance_description` varchar(45) DEFAULT NULL,
   `insurance_percentage` decimal(5,2) DEFAULT NULL,
-  PRIMARY KEY (`insurance_id`),
+  PRIMARY KEY (`id`),
   UNIQUE KEY `insurance_name_UNIQUE` (`insurance_name`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
@@ -39,21 +39,21 @@ CREATE TABLE IF NOT EXISTS `insurance` (
 -- Dumping data for table `insurance`
 --
 
-INSERT INTO `insurance` (`insurance_id`, `insurance_name`, `insurance_description`, `insurance_percentage`) VALUES
-(1, 'Maxicare', NULL, NULL),
-(2, 'Cocolife', NULL, NULL),
-(3, 'ValuCare', NULL, NULL),
-(4, 'Prudentialife', NULL, NULL),
-(5, 'AsianLife', NULL, NULL),
-(6, 'Medserve', NULL, NULL),
-(7, 'St. Patrick', NULL, NULL),
-(8, 'Philcare', NULL, NULL),
-(9, 'AA International', NULL, NULL),
-(10, 'Living Well', NULL, NULL),
-(11, 'SM Global Pinoy', NULL, NULL),
-(12, 'Walk-in', NULL, NULL),
-(13, 'Established Patient', NULL, NULL),
-(14, 'Others', NULL, NULL);
+INSERT INTO `insurance` (`id`, `insurance_name`) VALUES
+(1, 'Maxicare'),
+(2, 'Cocolife'),
+(3, 'ValuCare'),
+(4, 'Prudentialife'),
+(5, 'AsianLife'),
+(6, 'Medserve'),
+(7, 'St. Patrick'),
+(8, 'Philcare'),
+(9, 'AA International'),
+(10, 'Living Well'),
+(11, 'SM Global Pinoy'),
+(12, 'Walk-in'),
+(13, 'Established Patient'),
+(14, 'Others');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
