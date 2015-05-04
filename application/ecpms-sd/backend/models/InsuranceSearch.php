@@ -1,14 +1,14 @@
 <?php
 
-namespace frontend\models;
+namespace backend\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\Insurance;
+use backend\models\Insurance;
 
 /**
- * InsuranceSearch represents the model behind the search form about `frontend\models\Insurance`.
+ * InsuranceSearch represents the model behind the search form about `backend\models\Insurance`.
  */
 class InsuranceSearch extends Insurance
 {

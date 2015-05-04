@@ -1,10 +1,10 @@
 <?php
 
-namespace frontend\controllers;
+namespace backend\controllers;
 
 use Yii;
-use frontend\models\Insurance;
-use frontend\models\InsuranceSearch;
+use backend\models\Insurance;
+use backend\models\InsuranceSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
