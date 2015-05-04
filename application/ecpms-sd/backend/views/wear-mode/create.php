@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\WearMode */
+/* @var $model backend\models\WearMode */
 
 $this->title = 'Create Wear Mode';
 $this->params['breadcrumbs'][] = ['label' => 'Wear Modes', 'url' => ['index']];
