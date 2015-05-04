@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `instruction` (
 -- Dumping data for table `instruction`
 --
 
-INSERT INTO `instruction` (`instruction_id`, `instruction_name`, `instruction_description`) VALUES
+INSERT INTO `instruction` (`id`, `instruction_name`, `instruction_description`) VALUES
 (1, 'constant wear', NULL),
 (2, 'far only', NULL),
 (3, 'near only', NULL),
