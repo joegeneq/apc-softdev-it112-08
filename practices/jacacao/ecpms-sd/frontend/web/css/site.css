@@ -1,0 +1,226 @@
+html,
+body {
+    height: 100%;
+}
+
+input,select,textarea,button{font-family:Lato; font-size:16px;}
+    .containercss{width:100%; max-width:900px; background:#FFF; color:#333; margin:0 auto; padding:50px; border-radius:3px; box-sizing:border-box;}
+        .containercss-top{text-align:center; width:100%; margin-bottom:30px;}
+        .containercss-top>h3{font-weight:normal; padding:0; margin:0;}
+        .containercss .themes{width:100%; height:auto; overflow:hidden; padding:10px 0;}
+        .containercss .themes>span{width:20px; height:20px; display:inline-block; cursor:pointer; border:solid 3px #FFF;}
+        .containercss .themes>span.selectedx{border-color:#333;}
+        .containercss .themes>a{text-decoration:none; font-size:16px; color:#2096cd; display:inline-block; padding:5px 10px; border:solid 1px #DDD;}
+        .containercss .themes>a:hover{border-color:#2096cd;}
+        .containercss .themes>a.activex{color:#FFF; background:#2096cd; border-color:#2096cd;}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 70px 15px 20px;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\e113"*/ "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/ "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+
+
+
+
+
+
+
+
+/* 
+    cursor: pointer;
+
+
+    SQUARED ONE 
+.squaredOne {
+    width: 28px;
+    height: 28px;
+    background: #fcfff4;
+
+    background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    background: -o-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    background: -ms-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 );
+    margin: 20px auto;
+    -webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.squaredOne label {
+    cursor: pointer;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 4px;
+    top: 4px;
+
+    -webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
+    -moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
+    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
+
+    background: -webkit-linear-gradient(top, #222 0%, #45484d 100%);
+    background: -moz-linear-gradient(top, #222 0%, #45484d 100%);
+    background: -o-linear-gradient(top, #222 0%, #45484d 100%);
+    background: -ms-linear-gradient(top, #222 0%, #45484d 100%);
+    background: linear-gradient(top, #222 0%, #45484d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#45484d',GradientType=0 );
+}
+
+.squaredOne label:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #1E90FF;
+
+    background: -webkit-linear-gradient(top, #1E90FF 0%, #00FFFF 100%);
+    background: -moz-linear-gradient(top, #1E90FF 0%, #00FFFF 100%);
+    background: -o-linear-gradient(top, #1E90FF 0%, #00FFFF 100%);
+    background: -ms-linear-gradient(top, #1E90FF 0%, #00FFFF 100%);
+    background: linear-gradient(top, #1E90FF 0%, #00FFFF 100%);
+
+    top: 2px;
+    left: 2px;
+
+    -webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+}
+
+.squaredOne label:hover::after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    filter: alpha(opacity=30);
+    opacity: 0.3;
+}
+
+.squaredOne input[type=checkbox]:checked + label:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+
+
+
+*/
+/*
+===========
+===========
+===========
+*/
+.norm_form_table {
+    width: 538px;
+    padding-top: 8px;
+    padding-bottom: 15px;
+    margin: 0 auto 20px auto;
+    padding:10px;
+}
+
+.form_table {
+    width: 538px;
+    padding-top: 8px;
+    padding-bottom: 15px;
+    margin: 0 auto 20px auto;
+    background-color: #CCFFFF;
+     border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    color: #FFF;
+    padding:10px;
+}
+.form_table { background-color : #CCFFFF; color : #443}
+.form_table thead { background-color: #CCFFFF  ; color : #000; font: bold 14px verdana; padding:4px; line-height:30px}
+.form_table tbody tr:nth-child(even) {background: #CCFFCC;}
+.form_table tbody tr:nth-child(odd) {background: #FFF}
+
+
+
+
