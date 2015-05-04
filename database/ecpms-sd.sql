@@ -124,6 +124,18 @@ CREATE TABLE IF NOT EXISTS `ecpms-sd`.`eoms` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
+INSERT INTO `eoms` (`id`, `eoms_name`) VALUES
+(1, 'full_safe'),
+(2, 'esophoria'),
+(3, 'esotropia'),
+(4, 'exotropia'),
+(5, 'hyperphoria'),
+(6, 'hypertropia'),
+(7, 'hypophoria'),
+(8, 'hypotropia'),
+(9, 'cyclophoria'),
+(10, 'cyclotropia');
+
 
 -- -----------------------------------------------------
 -- Table `ecpms-sd`.`wear_mode`
