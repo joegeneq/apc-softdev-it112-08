@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `design` (
 -- Dumping data for table `design`
 --
 
-INSERT INTO `design` (`design_id`, `design_name`, `design_description`) VALUES
+INSERT INTO `design` (`id`, `design_name`, `design_description`) VALUES
 (1, 'CR39', NULL),
 (2, 'Hi-index', NULL),
 (3, 'Polycarb', NULL),
