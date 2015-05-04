@@ -1,14 +1,14 @@
 <?php
 
-namespace frontend\models;
+namespace backend\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\Design;
+use backend\models\Design;
 
 /**
- * DesignSearch represents the model behind the search form about `frontend\models\Design`.
+ * DesignSearch represents the model behind the search form about `backend\models\Design`.
  */
 class DesignSearch extends Design
 {
