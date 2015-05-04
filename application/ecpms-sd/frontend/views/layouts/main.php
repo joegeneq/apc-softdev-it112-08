@@ -41,7 +41,7 @@ AppAsset::register($this);
                 $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {
-                if(Yii::$app->user->identity->role == 10){//ADMIN
+                if(Yii::$app->user->identity->role == 20){//ADMIN
                     //$url = Url::to(['user/view', 'id' => Yii::$app->user->identity->id]);
                     $menuItems = [
                         ['label' => 'Home', 'url' => ['/site/index']],
@@ -50,22 +50,26 @@ AppAsset::register($this);
                         //['label' => 'Account', 'url' => ['/user/view' . '&id=' . Yii::$app->user->identity->id . '']],
                         //['label' => 'Account', Yii::$app->urlManager->createUrl(['/city/view', 'id' => Yii::$app->user->identity->id])]
                         ['label' => 'Account', 'url' => ['/user/view', 'id' => Yii::$app->user->identity->id]],
+                        ['label' => 'Account2', 'url' => ['/user/index', 'role' =>30]],
+                        ['label' => 'Patients', 'url' => ['/patient/index']],
+                        ['label' => 'Medical History', 'url' => ['/medical-history/index']],
+                        //['label' => 'Profile', 'url' => ['/patient/view', 'id' => Yii::$app->user->identity->id]],
+                        //['label' => 'Medical History', 'url' => ['/medical-history/view', 'id' => Yii::$app->user->identity->id]],
                     ];
                 }
-                if(Yii::$app->user->identity->role == 20){//EMPLOYEE
+                if(Yii::$app->user->identity->role == 30){//EMPLOYEE
                     $menuItems = [
                         ['label' => 'Home', 'url' => ['/site/index']],
                         ['label' => 'About', 'url' => ['/site/about']],
                         ['label' => 'Contact', 'url' => ['/site/contact']],
+                        ['label' => 'Patients', 'url' => ['/patient/index']],
+
                         ['label' => 'Account', 'url' => ['/user/index']],
                         ['label' => 'Profile', 'url' => ['/patientprofile/index']],//.Yii::$app->user->identity->id]],
-                        ['label' => 'Family History', 'url' => ['/familyhistory/index']],
-                        ['label' => 'Sports History', 'url' => ['/sportshistory/index']],
-                        ['label' => 'Personal Experience', 'url' => ['/personalexperience/index']],
                         ['label' => 'Records', 'url' => ['/record/index']],
                     ];
                 }
-                if(Yii::$app->user->identity->role == 30){//PATIENT
+                if(Yii::$app->user->identity->role == 10){//PATIENT
                     $menuItems = [
                         ['label' => 'Home', 'url' => ['/site/index']],
                         ['label' => 'About', 'url' => ['/site/about']],
