@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\ContactLens */
+/* @var $model backend\models\ContactLens */
 
 $this->title = 'Create Contact Lens';
 $this->params['breadcrumbs'][] = ['label' => 'Contact Lens', 'url' => ['index']];

@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\ContactLens */
+/* @var $model backend\models\ContactLens */
 
 $this->title = 'Update Contact Lens: ' . ' ' . $model->contact_lens_id;
 $this->params['breadcrumbs'][] = ['label' => 'Contact Lens', 'url' => ['index']];

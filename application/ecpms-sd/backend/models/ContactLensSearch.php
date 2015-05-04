@@ -1,14 +1,14 @@
 <?php
 
-namespace frontend\models;
+namespace backend\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\ContactLens;
+use backend\models\ContactLens;
 
 /**
- * ContactLensSearch represents the model behind the search form about `frontend\models\ContactLens`.
+ * ContactLensSearch represents the model behind the search form about `backend\models\ContactLens`.
  */
 class ContactLensSearch extends ContactLens
 {
