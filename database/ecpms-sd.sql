@@ -92,6 +92,9 @@ CREATE TABLE IF NOT EXISTS `ecpms-sd`.`city` (
   UNIQUE INDEX `city_name_UNIQUE` (`city_name` ASC))
 ENGINE = InnoDB;
 
+INSERT INTO `city` (`city_id`, `city_name`, `city_code`) VALUES
+(1, 'Makati', 1200),
+(2, 'Pasay', 1300);
 
 -- -----------------------------------------------------
 -- Table `ecpms-sd`.`discount`
