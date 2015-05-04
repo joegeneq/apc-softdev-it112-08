@@ -16,7 +16,7 @@ use Yii;
  * @property integer $role
  * @property integer $status
  * @property string $created_at
- * @property integer $updated_at
+ * @property string $updated_at
  *
  * @property MedicalHistory $medicalHistory
  * @property PatientProfile $patientProfile
@@ -38,9 +38,9 @@ class User extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['username', 'auth_key', 'password_hash', 'email', 'updated_at'], 'required'],
-            [['role', 'status', 'updated_at'], 'integer'],
-            [['created_at'], 'safe'],
+            [['username', 'auth_key', 'password_hash', 'email'], 'required'],
+            [['role', 'status'], 'integer'],
+            [['created_at', 'updated_at'], 'safe'],
             [['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
             [['username'], 'unique']
@@ -87,6 +87,6 @@ class User extends \yii\db\ActiveRecord
      */
     public function getRecords()
     {
-        return $this->hasMany(Record::className(), ['patient_id' => 'id']);
+        return $this->hasMany(Record::className(), ['employee_id' => 'id']);
     }
 }
