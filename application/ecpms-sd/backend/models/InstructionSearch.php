@@ -1,14 +1,14 @@
 <?php
 
-namespace frontend\models;
+namespace backend\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\Instruction;
+use backend\models\Instruction;
 
 /**
- * InstructionSearch represents the model behind the search form about `frontend\models\Instruction`.
+ * InstructionSearch represents the model behind the search form about `backend\models\Instruction`.
  */
 class InstructionSearch extends Instruction
 {
