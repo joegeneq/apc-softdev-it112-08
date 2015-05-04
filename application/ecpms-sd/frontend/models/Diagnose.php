@@ -7,7 +7,7 @@ use Yii;
 /**
  * This is the model class for table "record".
  *
- * @property integer $id
+ * @property integer $record_id
  * @property integer $patient_id
  * @property integer $employee_id
  * @property resource $patient_signature
@@ -18,8 +18,8 @@ use Yii;
  * @property Accounting $accounting
  * @property Evaluation $evaluation
  * @property Prescription $prescription
- * @property User $employee
  * @property User $patient
+ * @property User $employee
  */
 class Diagnose extends \yii\db\ActiveRecord
 {
@@ -50,14 +50,13 @@ class Diagnose extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
+            'record_id' => 'Record ID',
             'patient_id' => 'Patient ID',
             'employee_id' => 'Employee ID',
             'patient_signature' => 'Patient Signature',
             'agreed_date' => 'Agreed Date',
             'employee_signature' => 'Employee Signature',
             'complaints' => 'Complaints',
-            //'EmployeeRole' => 'EmployeeRole',
         ];
     }
 
@@ -66,7 +65,7 @@ class Diagnose extends \yii\db\ActiveRecord
      */
     public function getAccounting()
     {
-        return $this->hasOne(Accounting::className(), ['record_id' => 'id']);
+        return $this->hasOne(Accounting::className(), ['record_id' => 'record_id']);
     }
 
     /**
@@ -74,7 +73,7 @@ class Diagnose extends \yii\db\ActiveRecord
      */
     public function getEvaluation()
     {
-        return $this->hasOne(Evaluation::className(), ['record_id' => 'id']);
+        return $this->hasOne(Evaluation::className(), ['record_id' => 'record_id']);
     }
 
     /**
@@ -82,15 +81,7 @@ class Diagnose extends \yii\db\ActiveRecord
      */
     public function getPrescription()
     {
-        return $this->hasOne(Prescription::className(), ['record_id' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getEmployee()
-    {
-        return $this->hasOne(User::className(), ['id' => 'employee_id']);
+        return $this->hasOne(Prescription::className(), ['record_id' => 'record_id']);
     }
 
     /**
@@ -98,7 +89,15 @@ class Diagnose extends \yii\db\ActiveRecord
      */
     public function getPatient()
     {
-        return $this->hasOne(User::className(), ['id' => 'patient_id']);
+        return $this->hasOne(User::className(), ['record_id' => 'patient_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getEmployee()
+    {
+        return $this->hasOne(User::className(), ['record_id' => 'employee_id']);
     }
     /*public function getEmployeeRole()
     {
