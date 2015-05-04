@@ -148,6 +148,11 @@ CREATE TABLE IF NOT EXISTS `ecpms-sd`.`wear_mode` (
   UNIQUE INDEX `wear_mode_name_UNIQUE` (`wear_mode_name` ASC))
 ENGINE = InnoDB;
 
+INSERT INTO `wear_mode` (`id`, `wear_mode_name`, `wear_mode_description`) VALUES
+(1, 'daily', NULL),
+(2, 'weekly', NULL),
+(3, 'monthly', NULL),
+(4, 'extended', NULL);
 
 -- -----------------------------------------------------
 -- Table `ecpms-sd`.`solutions`
