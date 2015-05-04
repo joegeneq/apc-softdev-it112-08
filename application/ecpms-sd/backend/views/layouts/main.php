@@ -41,6 +41,22 @@ AppAsset::register($this);
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {
+                    if(Yii::$app->user->identity->role === 20){//ADMIN
+                    $menuItems = [
+                        ['label' => 'Home', 'url' => ['/site/index']],
+                        ['label' => 'Admin', 'url' => ['/site/index']],
+                     ];
+                    }if(Yii::$app->user->identity->role === 30){//ADMIN
+                    $menuItems = [
+                        ['label' => 'Home', 'url' => ['/site/index']],
+                        ['label' => 'Employee', 'url' => ['/site/index']],
+                     ];
+                    }if(Yii::$app->user->identity->role === 10){//ADMIN
+                    $menuItems = [
+                        ['label' => 'Home', 'url' => ['/site/index']],
+                        ['label' => 'Patient', 'url' => ['/site/index']],
+                     ];
+                    }
                 $menuItems[] = [
                     'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
                     'url' => ['/site/logout'],
