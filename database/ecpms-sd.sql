@@ -69,6 +69,22 @@ CREATE TABLE IF NOT EXISTS `ecpms-sd`.`insurance` (
   UNIQUE INDEX `insurance_name_UNIQUE` (`insurance_name` ASC))
 ENGINE = InnoDB;
 
+INSERT INTO `insurance` (`id`, `insurance_name`) VALUES
+(1, 'Maxicare', NULL, NULL),
+(2, 'Cocolife', NULL, NULL),
+(3, 'ValuCare', NULL, NULL),
+(4, 'Prudentialife', NULL, NULL),
+(5, 'AsianLife', NULL, NULL),
+(6, 'Medserve', NULL, NULL),
+(7, 'St. Patrick', NULL, NULL),
+(8, 'Philcare', NULL, NULL),
+(9, 'AA International', NULL, NULL),
+(10, 'Living Well', NULL, NULL),
+(11, 'SM Global Pinoy', NULL, NULL),
+(12, 'Walk-in', NULL, NULL),
+(13, 'Established Patient', NULL, NULL),
+(14, 'Others', NULL, NULL);
+
 
 -- -----------------------------------------------------
 -- Table `ecpms-sd`.`contact_lens`
