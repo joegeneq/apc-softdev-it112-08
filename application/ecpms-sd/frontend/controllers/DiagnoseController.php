@@ -47,7 +47,7 @@ class DiagnoseController extends Controller
 
     /**
      * Displays a single Diagnose model.
-     * @param integer $id
+     * @param integer $record_id
      * @return mixed
      */
     public function actionView($id)
@@ -73,16 +73,21 @@ class DiagnoseController extends Controller
         $accounting = new Accounting();
         $user = new User();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save() &&
-            $evaluation->load(Yii::$app->request->post()) && $evaluation->save() &&
-            $prescription->load(Yii::$app->request->post()) && $prescription->save() &&
-            $accounting->load(Yii::$app->request->post()) && $accounting->save()) {
-/*
-            $evaluation->record_id==$model->id;//$evaluation->save();
-            $prescription->record_id==$model->id;//$prescription->save();
-            $accounting->record_id==$model->id;//$accounting->save();
-*/
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post()) && //$model->save() &&
+            $evaluation->load(Yii::$app->request->post()) && //$evaluation->save() &&
+            $prescription->load(Yii::$app->request->post()) && //$prescription->save() &&
+            $accounting->load(Yii::$app->request->post()) //&& $accounting->save()
+            ) {
+            $model->save();
+            //$model->record_id=$evaluation->record_id;
+            $evaluation->record_id=$model->record_id;
+            $evaluation->save();
+            $prescription->record_id=$model->record_id;
+            $prescription->save();
+            $accounting->record_id=$model->record_id;
+            $accounting->save();
+
+            return $this->redirect(['view', 'id' => $model->record_id]);
 
         } else {
             return $this->render('create', [
@@ -98,21 +103,21 @@ class DiagnoseController extends Controller
     /**
      * Updates an existing Diagnose model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
+     * @param integer $record_id
      * @return mixed
      */
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        /*$evaluation = $this->findModel($id);
-        $prescription = $this->findModel($id);
-        $accounting = $this->findModel($id);*/
+        /*$evaluation = $this->findModel($record_id);
+        $prescription = $this->findModel($record_id);
+        $accounting = $this->findModel($record_id);*/
 
         if ($model->load(Yii::$app->request->post()) && $model->save()){ //&&     
             //$evaluation->load(Yii::$app->request->post()) && $evaluation->save() &&
             //$prescription->load(Yii::$app->request->post()) && $prescription->save() &&
             //$accounting->load(Yii::$app->request->post()) && $accounting->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['view', 'id' => $model->record_id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -126,7 +131,7 @@ class DiagnoseController extends Controller
     /**
      * Deletes an existing Diagnose model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
+     * @param integer $record_id
      * @return mixed
      */
     public function actionDelete($id)
@@ -139,7 +144,7 @@ class DiagnoseController extends Controller
     /**
      * Finds the Diagnose model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
+     * @param integer $record_id
      * @return Diagnose the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
