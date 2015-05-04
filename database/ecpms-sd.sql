@@ -191,6 +191,11 @@ CREATE TABLE IF NOT EXISTS `ecpms-sd`.`instruction` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
+INSERT INTO `instruction` (`id`, `instruction_name`, `instruction_description`) VALUES
+(1, 'constant wear', NULL),
+(2, 'far only', NULL),
+(3, 'near only', NULL),
+(4, 'intermediate', NULL);
 
 -- -----------------------------------------------------
 -- Table `ecpms-sd`.`acuity`
