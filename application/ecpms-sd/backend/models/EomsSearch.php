@@ -1,14 +1,14 @@
 <?php
 
-namespace frontend\models;
+namespace backend\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\Eoms;
+use backend\models\Eoms;
 
 /**
- * EomsSearch represents the model behind the search form about `frontend\models\Eoms`.
+ * EomsSearch represents the model behind the search form about `backend\models\Eoms`.
  */
 class EomsSearch extends Eoms
 {

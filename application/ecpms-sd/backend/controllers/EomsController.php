@@ -1,10 +1,10 @@
 <?php
 
-namespace frontend\controllers;
+namespace backend\controllers;
 
 use Yii;
-use frontend\models\Eoms;
-use frontend\models\EomsSearch;
+use backend\models\Eoms;
+use backend\models\EomsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

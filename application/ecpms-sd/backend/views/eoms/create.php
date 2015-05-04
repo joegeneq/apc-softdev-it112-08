@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\Eoms */
+/* @var $model backend\models\Eoms */
 
 $this->title = 'Create Eoms';
 $this->params['breadcrumbs'][] = ['label' => 'Eoms', 'url' => ['index']];
