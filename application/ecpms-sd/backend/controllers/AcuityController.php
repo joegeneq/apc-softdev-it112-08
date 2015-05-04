@@ -1,10 +1,10 @@
 <?php
 
-namespace frontend\controllers;
+namespace backend\controllers;
 
 use Yii;
-use frontend\models\Acuity;
-use frontend\models\AcuitySearch;
+use backend\models\Acuity;
+use backend\models\AcuitySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

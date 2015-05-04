@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\Acuity */
+/* @var $model backend\models\Acuity */
 
 $this->title = 'Create Acuity';
 $this->params['breadcrumbs'][] = ['label' => 'Acuities', 'url' => ['index']];
