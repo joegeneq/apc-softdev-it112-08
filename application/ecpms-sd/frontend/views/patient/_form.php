@@ -83,117 +83,44 @@ use backend\models\ContactLens;
 
     <?= $form->field($medical, 'comfortability')->radioList(array('1'=>'Yes','0'=>'No')); ?>
     
-    <?= $form->field($medical, 'blindness_grand')->checKbox() ?>
-
-    <?= $form->field($medical, 'blindness_parents')->checKbox() ?>
-
-    <?= $form->field($medical, 'blindness_siblings')->checKbox() ?>
-
-    <?= $form->field($medical, 'blindness_children')->checKbox() ?>
-
-    <?= $form->field($medical, 'cataracts_grand')->checKbox() ?>
-
-    <?= $form->field($medical, 'cataracts_parents')->checKbox() ?>
-
-    <?= $form->field($medical, 'cataracts_siblings')->checKbox() ?>
-
-    <?= $form->field($medical, 'cataracts_children')->checKbox() ?>
-
-    <?= $form->field($medical, 'crossed_eyes_grand')->checKbox() ?>
-
-    <?= $form->field($medical, 'crossed_eyes_parents')->checKbox() ?>
-
-    <?= $form->field($medical, 'crossed_eyes_siblings')->checKbox() ?>
-
-    <?= $form->field($medical, 'crossed_eyes_children')->checKbox() ?>
-
-    <?= $form->field($medical, 'glaucoma_grand')->checKbox() ?>
-
-    <?= $form->field($medical, 'glaucoma_parents')->checKbox() ?>
-
-    <?= $form->field($medical, 'glaucoma_siblings')->checKbox() ?>
-
-    <?= $form->field($medical, 'glaucoma_children')->checKbox() ?>
-
-    <?= $form->field($medical, 'macular_degeneration_grand')->checKbox() ?>
-
-    <?= $form->field($medical, 'macular_degeneration_parents')->checKbox() ?>
-
-    <?= $form->field($medical, 'macular_degeneration_siblings')->checKbox() ?>
-
-    <?= $form->field($medical, 'macular_degeneration_children')->checKbox() ?>
-
-    <?= $form->field($medical, 'retinal_detachment_grand')->checKbox() ?>
-
-    <?= $form->field($medical, 'retinal_detachment_parents')->checKbox() ?>
-
-    <?= $form->field($medical, 'retinal_detachment_siblings')->checKbox() ?>
-
-    <?= $form->field($medical, 'retinal_detachment_children')->checKbox() ?>
-
-    <?= $form->field($medical, 'arthritis_grand')->checKbox() ?>
-
-    <?= $form->field($medical, 'arthritis_parents')->checKbox() ?>
-
-    <?= $form->field($medical, 'arthritis_siblings')->checKbox() ?>
-
-    <?= $form->field($medical, 'arthritis_children')->checKbox() ?>
-
-    <?= $form->field($medical, 'cancer_grand')->checKbox() ?>
-
-    <?= $form->field($medical, 'cancer_parents')->checKbox() ?>
-
-    <?= $form->field($medical, 'cancer_siblings')->checKbox() ?>
-
-    <?= $form->field($medical, 'cancer_children')->checKbox() ?>
-
-    <?= $form->field($medical, 'diabetes_grand')->checKbox() ?>
-
-    <?= $form->field($medical, 'diabetes_parents')->checKbox() ?>
-
-    <?= $form->field($medical, 'diabetes_siblings')->checKbox() ?>
-
-    <?= $form->field($medical, 'diabetes_children')->checKbox() ?>
-
-    <?= $form->field($medical, 'heart_disease_grand')->checKbox() ?>
-
-    <?= $form->field($medical, 'heart_disease_parents')->checKbox() ?>
-
-    <?= $form->field($medical, 'heart_disease_siblings')->checKbox() ?>
-
-    <?= $form->field($medical, 'heart_disease_children')->checKbox() ?>
-
-    <?= $form->field($medical, 'high_blood_pressure_grand')->checKbox() ?>
-
-    <?= $form->field($medical, 'high_blood_pressure_parents')->checKbox() ?>
-
-    <?= $form->field($medical, 'high_blood_pressure_siblings')->checKbox() ?>
-
-    <?= $form->field($medical, 'high_blood_pressure_children')->checKbox() ?>
-
-    <?= $form->field($medical, 'kidney_disease_grand')->checKbox() ?>
-
-    <?= $form->field($medical, 'kidney_disease_parents')->checKbox() ?>
-
-    <?= $form->field($medical, 'kidney_disease_siblings')->checKbox() ?>
-
-    <?= $form->field($medical, 'kidney_disease_children')->checKbox() ?>
-
-    <?= $form->field($medical, 'lupus_grand')->checKbox() ?>
-
-    <?= $form->field($medical, 'lupus_parents')->checKbox() ?>
-
-    <?= $form->field($medical, 'lupus_siblings')->checKbox() ?>
-
-    <?= $form->field($medical, 'lupus_children')->checKbox() ?>
-
-    <?= $form->field($medical, 'thyroid_disease_grand')->checKbox() ?>
-
-    <?= $form->field($medical, 'thyroid_disease_parents')->checKbox() ?>
-
-    <?= $form->field($medical, 'thyroid_disease_siblings')->checKbox() ?>
-
-    <?= $form->field($medical, 'thyroid_disease_children')->checKbox() ?>
+<fieldset><legend>Family History</legend></fieldset>
+              <div class="form_table">
+                <table width="100%" cellpadding="2" cellsapcing ="2">
+                <thead>
+                    <tr><th>Disease</th><th>Grand parents</th><th>Parents</th><th>Siblings</th><th>Children</th></tr>
+                </thead>
+                <tbody>
+                     <tr><td>Blindness</td><td><?= $form->field($medical, 'blindness_grand')->checkbox() ?></td><td><?= $form->field($medical, 'blindness_parents')->checkbox() ?></td>
+                        <td><?= $form->field($medical, 'blindness_siblings')->checkbox() ?></td><td><?= $form->field($medical, 'blindness_children')->checkbox() ?></td></tr>
+                    <tr><td>Cataracts</td><td><?= $form->field($medical, 'cataracts_grand')->checkbox() ?></td><td><?= $form->field($medical, 'cataracts_parents')->checkbox() ?></td>
+                        <td><?= $form->field($medical, 'cataracts_siblings')->checkbox() ?></td><td><?= $form->field($medical, 'cataracts_children')->checkbox() ?></td></tr>
+                    <tr><td>Crossed Eyes</td><td><?= $form->field($medical, 'crossed_eyes_grand')->checkbox() ?></td><td><?= $form->field($medical, 'crossed_eyes_parents')->checkbox() ?></td>
+                        <td><?= $form->field($medical, 'crossed_eyes_siblings')->checkbox() ?></td><td><?= $form->field($medical, 'crossed_eyes_children')->checkbox() ?></td></tr>
+                    <tr><td>Glaucoma</td><td><?= $form->field($medical, 'glaucoma_grand')->checkbox() ?></td><td><?= $form->field($medical, 'glaucoma_parents')->checkbox() ?></td>
+                        <td><?= $form->field($medical, 'glaucoma_siblings')->checkbox() ?></td><td><?= $form->field($medical, 'glaucoma_children')->checkbox() ?></td></tr>
+                    <tr><td>Macular Degeneration</td><td><?= $form->field($medical, 'macular_degeneration_grand')->checkbox() ?></td><td><?= $form->field($medical, 'macular_degeneration_parents')->checkbox() ?></td>
+                        <td><?= $form->field($medical, 'macular_degeneration_siblings')->checkbox() ?></td><td><?= $form->field($medical, 'macular_degeneration_children')->checkbox() ?></td></tr>
+                    <tr><td>Retinal_Detachment</td><td><?= $form->field($medical, 'retinal_detachment_grand')->checkbox() ?></td><td><?= $form->field($medical, 'retinal_detachment_parents')->checkbox() ?></td>
+                        <td><?= $form->field($medical, 'retinal_detachment_siblings')->checkbox() ?></td><td><?= $form->field($medical, 'retinal_detachment_children')->checkbox() ?></td></tr>
+                    <tr><td>Arthritis</td><td><?= $form->field($medical, 'arthritis_grand')->checkbox() ?></td><td><?= $form->field($medical, 'arthritis_parents')->checkbox() ?></td>
+                        <td><?= $form->field($medical, 'arthritis_siblings')->checkbox() ?></td><td><?= $form->field($medical, 'arthritis_children')->checkbox() ?></td></tr>
+                    <tr><td>Cancer</td><td><?= $form->field($medical, 'cancer_grand')->checkbox() ?></td><td><?= $form->field($medical, 'cancer_parents')->checkbox() ?></td>
+                        <td><?= $form->field($medical, 'cancer_siblings')->checkbox() ?></td><td><?= $form->field($medical, 'cancer_children')->checkbox() ?></td></tr>
+                    <tr><td>Diabetes</td><td><?= $form->field($medical, 'diabetes_grand')->checkbox() ?></td><td><?= $form->field($medical, 'diabetes_parents')->checkbox() ?></td>
+                        <td><?= $form->field($medical, 'diabetes_siblings')->checkbox() ?></td><td><?= $form->field($medical, 'diabetes_children')->checkbox() ?></td></tr>
+                    <tr><td>Heart Disease</td><td><?= $form->field($medical, 'heart_disease_grand')->checkbox() ?></td><td><?= $form->field($medical, 'heart_disease_parents')->checkbox() ?></td>
+                        <td><?= $form->field($medical, 'heart_disease_siblings')->checkbox() ?></td><td><?= $form->field($medical, 'heart_disease_children')->checkbox() ?></td></tr>
+                    <tr><td>High Blood Pressure</td><td><?= $form->field($medical, 'high_blood_pressure_grand')->checkbox() ?></td><td><?= $form->field($medical, 'high_blood_pressure_parents')->checkbox() ?></td>
+                        <td><?= $form->field($medical, 'high_blood_pressure_siblings')->checkbox() ?></td><td><?= $form->field($medical, 'high_blood_pressure_children')->checkbox() ?></td></tr>
+                    <tr><td>Kidney Disease</td><td><?= $form->field($medical, 'kidney_disease_grand')->checkbox() ?></td><td><?= $form->field($medical, 'kidney_disease_parents')->checkbox() ?></td>
+                        <td><?= $form->field($medical, 'kidney_disease_siblings')->checkbox() ?></td><td><?= $form->field($medical, 'kidney_disease_children')->checkbox() ?></td></tr>
+                    <tr><td>Lupus</td><td><?= $form->field($medical, 'lupus_grand')->checkbox() ?></td><td><?= $form->field($medical, 'lupus_parents')->checkbox() ?></td>
+                        <td><?= $form->field($medical, 'lupus_siblings')->checkbox() ?></td><td><?= $form->field($medical, 'lupus_children')->checkbox() ?></td></tr>
+                    <tr><td>Thyroid Disease</td><td><?= $form->field($medical, 'thyroid_disease_grand')->checkbox() ?></td><td><?= $form->field($medical, 'thyroid_disease_parents')->checkbox() ?></td>
+                        <td><?= $form->field($medical, 'thyroid_disease_siblings')->checkbox() ?></td><td><?= $form->field($medical, 'thyroid_disease_children')->checkbox() ?></td></tr>
+                </tbody>
+                </table>
+              </div>
 
     <?= $form->field($medical, 'others')->textarea(['rows' => 6]) ?>
 
