@@ -66,7 +66,7 @@ use backend\models\ContactLens;
                 <td style="width: 300px;"><?= $form->field($medical, 'medications')->textarea(['rows' => 6]) ?></td>
                 <td style="width: 300px;"><?= $form->field($medical, 'treatments')->textarea(['rows' => 6]) ?></td></tr>
 
-                <tr><td style="width: 300px;"><br><?= $form->field($medical, 'contact_lens')->textInput(['maxlength' => 1]) ?></td>
+                <tr><td style="width: 300px;"><br><?= $form->field($medical, 'contact_lens')->radioList(array('Y'=>'Yes','N'=>'No')); ?></td>
                 <td style="width: 300px;"><?= $form->field($medical, 'contact_lens_age')->textInput(['maxlength' => 45]) ?></td>
                 <td style="width: 300px;"><br><?php
                         $contacts=ContactLens::find()->all();
