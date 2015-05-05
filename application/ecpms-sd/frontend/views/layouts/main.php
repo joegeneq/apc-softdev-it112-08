@@ -47,14 +47,11 @@ AppAsset::register($this);
                         ['label' => 'Home', 'url' => ['/site/index']],
                         ['label' => 'About', 'url' => ['/site/about']],
                         ['label' => 'Contact', 'url' => ['/site/contact']],
-                        //['label' => 'Account', 'url' => ['/user/view' . '&id=' . Yii::$app->user->identity->id . '']],
-                        //['label' => 'Account', Yii::$app->urlManager->createUrl(['/city/view', 'id' => Yii::$app->user->identity->id])]
                         ['label' => 'Account', 'url' => ['/user/view', 'id' => Yii::$app->user->identity->id]],
-                        ['label' => 'Account2', 'url' => ['/user/index', 'role' =>30]],
+                        ['label' => 'Profile', 'url' => ['/patient-profile/update', 'id' => Yii::$app->user->identity->id]],
+                        ['label' => 'Medical History', 'url' => ['/medical-history/update', 'id' => Yii::$app->user->identity->id]],
                         ['label' => 'Patients', 'url' => ['/patient/index']],
-                        ['label' => 'Medical History', 'url' => ['/medical-history/index']],
-                        //['label' => 'Profile', 'url' => ['/patient/view', 'id' => Yii::$app->user->identity->id]],
-                        //['label' => 'Medical History', 'url' => ['/medical-history/view', 'id' => Yii::$app->user->identity->id]],
+                        ['label' => 'Patient\'s Medical History', 'url' => ['/medical-history/index']],
                     ];
                 }
                 if(Yii::$app->user->identity->role == 30){//EMPLOYEE
@@ -62,11 +59,12 @@ AppAsset::register($this);
                         ['label' => 'Home', 'url' => ['/site/index']],
                         ['label' => 'About', 'url' => ['/site/about']],
                         ['label' => 'Contact', 'url' => ['/site/contact']],
-                        ['label' => 'Patients', 'url' => ['/patient/index']],
-
-                        ['label' => 'Account', 'url' => ['/user/index']],
-                        ['label' => 'Profile', 'url' => ['/patientprofile/index']],//.Yii::$app->user->identity->id]],
+                        ['label' => 'Account', 'url' => ['/user/view', 'id' => Yii::$app->user->identity->id]],
+                        ['label' => 'Profile', 'url' => ['/patient-profile/update', 'id' => Yii::$app->user->identity->id]],
+                        ['label' => 'Medical History', 'url' => ['/medical-history/update', 'id' => Yii::$app->user->identity->id]],
+                        ['label' => 'Patients', 'url' => ['/patient-profile/index']],
                         ['label' => 'Records', 'url' => ['/record/index']],
+
                     ];
                 }
                 if(Yii::$app->user->identity->role == 10){//PATIENT
@@ -74,11 +72,9 @@ AppAsset::register($this);
                         ['label' => 'Home', 'url' => ['/site/index']],
                         ['label' => 'About', 'url' => ['/site/about']],
                         ['label' => 'Contact', 'url' => ['/site/contact']],
-                        ['label' => 'Account', 'url' => ['/user/view']],
-                        ['label' => 'Profile', 'url' => ['/patientprofile/view']],//.Yii::$app->user->identity->id]],
-                        ['label' => 'Family History', 'url' => ['/familyhistory/view']],
-                        ['label' => 'Sports History', 'url' => ['/sportshistory/view']],
-                        ['label' => 'Personal Experience', 'url' => ['/personalexperience/view']],
+                        ['label' => 'Account', 'url' => ['/user/view', 'id' => Yii::$app->user->identity->id]],
+                        ['label' => 'Profile', 'url' => ['/patient-profile/update', 'id' => Yii::$app->user->identity->id]],
+                        ['label' => 'Medical History', 'url' => ['/medical-history/update', 'id' => Yii::$app->user->identity->id]],
                         ['label' => 'Records', 'url' => ['/record/view']],
                     ];
                 }
