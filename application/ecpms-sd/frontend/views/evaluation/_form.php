@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use dosamigos\datepicker\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Evaluation */
@@ -28,57 +29,76 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'plan_TCB')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'plan_next_visit')->textInput() ?>
+    <?= $form->field($model, 'plan_next_visit')->widget(
+                DatePicker::className(), [
+                    'inline' => false, 
+                    'clientOptions' => [
+                        'autoclose' => true,
+                        'format' => 'yyyy-mm-dd'
+                    ]
+    ]);?>
 
-    <?= $form->field($model, 'v_d_od_sc')->textInput() ?>
+    <section style="margin: 10px;">
+        <fieldset>
+                <legend><b> Visual Acuity </b> </legend>
+            <center><table><thead>
+                <tr><th style="width: 100px;"></th><th style="width: 225px;">OD</th><th style="width: 225px;">OS</th><th style="width: 225px;">OU</th></tr>
+            </thead>
+                <tbody>
+                    <tr><td>Sc</td>
+                    <td style="width: 225px;"><?= $form->field($model, 'v_d_od_sc')->textInput() ?></td>
+                    <td style="width: 225px;"><?= $form->field($model, 'v_d_os_sc')->textInput() ?></td>
+                    <td style="width: 225px;"><?= $form->field($model, 'v_d_ou_sc')->textInput() ?></td></tr>
+    
+                    <tr><td>CC</td>
+                    <td style="width: 225px;"><?= $form->field($model, 'v_d_od_cc')->textInput() ?></td>
+                    <td style="width: 225px;"><?= $form->field($model, 'v_d_os_cc')->textInput() ?></td>
+                    <td style="width: 225px;"><?= $form->field($model, 'v_d_ou_cc')->textInput() ?></td></tr>
 
-    <?= $form->field($model, 'v_d_od_cc')->textInput() ?>
+                    <tr><td>Ph</td>
+                    <td style="width: 225px;"><?= $form->field($model, 'v_d_od_ph')->textInput() ?></td>
+                    <td style="width: 225px;"><?= $form->field($model, 'v_d_os_ph')->textInput() ?></td>
+                    <td style="width: 225px;"><?= $form->field($model, 'v_d_ou_ph')->textInput() ?></td></tr>
 
-    <?= $form->field($model, 'v_d_od_ph')->textInput() ?>
+                    <tr><td>Sc</td>
+                    <td style="width: 225px;"><?= $form->field($model, 'v_n_od_sc')->textInput() ?></td>
+                    <td style="width: 225px;"><?= $form->field($model, 'v_n_os_sc')->textInput() ?></td>
+                    <td style="width: 225px;"><?= $form->field($model, 'v_n_ou_sc')->textInput() ?></td></tr>
 
-    <?= $form->field($model, 'v_n_od_sc')->textInput() ?>
+                    <tr><td>Cc</td>
+                    <td style="width: 225px;"><?= $form->field($model, 'v_n_od_cc')->textInput() ?></td>
+                    <td style="width: 225px;"><?= $form->field($model, 'v_n_os_cc')->textInput() ?></td>
+                    <td style="width: 225px;"><?= $form->field($model, 'v_n_ou_cc')->textInput() ?></td></tr>
+                </tbody></table></center>
 
-    <?= $form->field($model, 'v_n_od_cc')->textInput() ?>
+    <section style="margin: 10px;">
+        <fieldset>
+                <legend><b> Refraction </b> </legend>
+            <center><table><thead>
+                <tr><th style="width: 100px;"></th><th style="width: 225px;">OD</th><th style="width: 225px;">OS</th></tr>
+            </thead>
+                <tbody>
+                    <tr><td>AR</td>
+                    <td><?= $form->field($model, 'r_a_od')->textInput(['maxlength' => 5]) ?></td>
+                    <td><?= $form->field($model, 'r_a_os')->textInput(['maxlength' => 5]) ?></td></tr>
 
-    <?= $form->field($model, 'v_d_os_sc')->textInput() ?>
+                    <tr><td>Manifest</td>
+                    <td><?= $form->field($model, 'r_m_od')->textInput(['maxlength' => 5]) ?></td>
+                    <td><?= $form->field($model, 'r_m_os')->textInput(['maxlength' => 5]) ?></td></tr>
 
-    <?= $form->field($model, 'v_d_os_cc')->textInput() ?>
+                    <tr><td>Cycloplegic Refraction</td>
+                    <td><?= $form->field($model, 'r_c_od')->textInput(['maxlength' => 5]) ?></td>
+                    <td><?= $form->field($model, 'r_c_os')->textInput(['maxlength' => 5]) ?></td></tr>
 
-    <?= $form->field($model, 'v_d_os_ph')->textInput() ?>
+                    <tr><td>Over Refraction</td>
+                    <td><?= $form->field($model, 'r_o_od')->textInput(['maxlength' => 5]) ?></td>
+                    <td><?= $form->field($model, 'r_o_os')->textInput(['maxlength' => 5]) ?></td></tr>
 
-    <?= $form->field($model, 'v_n_os_sc')->textInput() ?>
+                    <tr><td>W</td>
+                    <td><?= $form->field($model, 'r_w_od')->textInput(['maxlength' => 5]) ?></td>
+                    <td><?= $form->field($model, 'r_w_os')->textInput(['maxlength' => 5]) ?></td></tr>
+                </tbody></table></center>
 
-    <?= $form->field($model, 'v_n_os_cc')->textInput() ?>
-
-    <?= $form->field($model, 'v_d_ou_sc')->textInput() ?>
-
-    <?= $form->field($model, 'v_d_ou_cc')->textInput() ?>
-
-    <?= $form->field($model, 'v_d_ou_ph')->textInput() ?>
-
-    <?= $form->field($model, 'v_n_ou_sc')->textInput() ?>
-
-    <?= $form->field($model, 'v_n_ou_cc')->textInput() ?>
-
-    <?= $form->field($model, 'r_a_od')->textInput(['maxlength' => 5]) ?>
-
-    <?= $form->field($model, 'r_a_os')->textInput(['maxlength' => 5]) ?>
-
-    <?= $form->field($model, 'r_m_od')->textInput(['maxlength' => 5]) ?>
-
-    <?= $form->field($model, 'r_m_os')->textInput(['maxlength' => 5]) ?>
-
-    <?= $form->field($model, 'r_c_od')->textInput(['maxlength' => 5]) ?>
-
-    <?= $form->field($model, 'r_c_os')->textInput(['maxlength' => 5]) ?>
-
-    <?= $form->field($model, 'r_o_od')->textInput(['maxlength' => 5]) ?>
-
-    <?= $form->field($model, 'r_o_os')->textInput(['maxlength' => 5]) ?>
-
-    <?= $form->field($model, 'r_w_od')->textInput(['maxlength' => 5]) ?>
-
-    <?= $form->field($model, 'r_w_os')->textInput(['maxlength' => 5]) ?>
 
     <?= $form->field($model, 'k_v_od')->textInput() ?>
 

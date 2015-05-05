@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use Yii;
+use frontend\models\Patient;
 use frontend\models\PatientProfile;
 use frontend\models\PatientProfileSearch;
 use yii\web\Controller;
@@ -61,12 +62,14 @@ class PatientProfileController extends Controller
     public function actionCreate()
     {
         $model = new PatientProfile();
+        $patient = new Patient();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->user_id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'patient' => $patient,
             ]);
         }
     }

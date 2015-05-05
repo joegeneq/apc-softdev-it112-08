@@ -57,13 +57,17 @@ AppAsset::register($this);
                 if(Yii::$app->user->identity->role == 30){//EMPLOYEE
                     $menuItems = [
                         ['label' => 'Home', 'url' => ['/site/index']],
-                        ['label' => 'About', 'url' => ['/site/about']],
-                        ['label' => 'Contact', 'url' => ['/site/contact']],
+                        //['label' => 'About', 'url' => ['/site/about']],
+                        //['label' => 'Contact', 'url' => ['/site/contact']],
                         ['label' => 'Account', 'url' => ['/user/view', 'id' => Yii::$app->user->identity->id]],
                         ['label' => 'Profile', 'url' => ['/patient-profile/update', 'id' => Yii::$app->user->identity->id]],
                         ['label' => 'Medical History', 'url' => ['/medical-history/update', 'id' => Yii::$app->user->identity->id]],
                         ['label' => 'Patients', 'url' => ['/patient-profile/index']],
+                        ['label' => 'Diagnose', 'url' => ['/diagnose/index']],
                         ['label' => 'Records', 'url' => ['/record/index']],
+                        ['label' => 'Evaluation', 'url' => ['/evaluation/index']],
+                        ['label' => 'Prescription', 'url' => ['/prescription/index']],
+                        ['label' => 'Accounting', 'url' => ['/accounting/index']],
 
                     ];
                 }

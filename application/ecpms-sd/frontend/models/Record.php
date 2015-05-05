@@ -51,11 +51,11 @@ class Record extends \yii\db\ActiveRecord
     {
         return [
             'record_id' => 'Record ID',
-            'patient_id' => 'Patient ID',
-            'employee_id' => 'Employee ID',
-            'patient_signature' => 'Patient Signature',
-            'agreed_date' => 'Agreed Date',
-            'employee_signature' => 'Employee Signature',
+            'patient_id' => 'Patient',
+            'employee_id' => 'Employee',
+            'patient_signature' => 'Patient signature',
+            'agreed_date' => 'Agreed due date',
+            'employee_signature' => 'Employee signature',
             'complaints' => 'Complaints',
         ];
     }
