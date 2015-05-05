@@ -64,13 +64,13 @@ class Patient extends \yii\db\ActiveRecord
             'middlename' => 'Middlename',
             'birthday' => 'Birthday',
             'gender' => 'Gender',
-            'city_id' => 'City ID',
+            'city_id' => 'City',
             'home_address' => 'Home Address',
             'company_address' => 'Company Address',
             'company_name' => 'Company Name',
-            'cel' => 'Cel',
-            'tel' => 'Tel',
-            'fb' => 'Fb',
+            'cel' => 'Cellphone number',
+            'tel' => 'Telephone number',
+            'fb' => 'Facebook',
             'sports' => 'Sports',
         ];
     }
