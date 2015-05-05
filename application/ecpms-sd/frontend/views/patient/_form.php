@@ -5,6 +5,7 @@ use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 use dosamigos\datepicker\DatePicker;
 use backend\models\City;
+use backend\models\ContactLens;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Patient */
 /* @var $form yii\widgets\ActiveForm */
@@ -73,7 +74,12 @@ use backend\models\City;
 
     <?= $form->field($medical, 'contact_lens_age')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($medical, 'contact_lens_id')->textInput() ?>
+    <?php
+        $contacts=ContactLens::find()->all();
+        $listData=ArrayHelper::map($contacts, 'contact_lens_id', 'contact_lens_name');
+        echo $form->field($medical, 'contact_lens_id')->dropDownList(
+            $listData,['prompt'=>'-- Contact types --']);
+    ?>
 
     <?= $form->field($medical, 'comfortability')->textInput() ?>
 
