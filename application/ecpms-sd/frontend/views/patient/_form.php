@@ -1,9 +1,10 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 use dosamigos\datepicker\DatePicker;
-
+use backend\models\City;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Patient */
 /* @var $form yii\widgets\ActiveForm */
@@ -32,7 +33,12 @@ use dosamigos\datepicker\DatePicker;
 
     <?= $form->field($model, 'gender')->radioList(array('M'=>'Male','F'=>'Female')); ?>
 
-    <?= $form->field($model, 'city_id')->textInput() ?>
+    <?php
+        $cities=City::find()->all();
+        $listData=ArrayHelper::map($cities, 'city_id', 'city_name');
+        echo $form->field($model, 'city_id')->dropDownList(
+            $listData,['prompt'=>'-- City --']);
+    ?>
 
     <?= $form->field($model, 'home_address')->textInput(['maxlength' => 255]) ?>
 
