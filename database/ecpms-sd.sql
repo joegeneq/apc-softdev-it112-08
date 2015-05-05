@@ -29,7 +29,10 @@ CREATE TABLE IF NOT EXISTS `ecpms-sd`.`user` (
   UNIQUE INDEX `username_UNIQUE` (`username` ASC))
 ENGINE = InnoDB;
 
-
+INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `role`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'administration', '5HQvjQwzGWH8DpTIgro__vwxp6JyFXeV', '$2y$13$M3NnLzp4uGHhWQu3CNrNeeJqx8yNvf4MiLZAkqzofxtLYE6sQZwZO', NULL, 'admin@gmail.com', 20, 10, NULL, NULL),
+(2, 'employee', 'YV8Smug8aAPEZYX_f2OajWz-eBJm_l0J', '$2y$13$vFl19PR4WVBGJy8HO5PhcODuf4675gyKdoLMJHyVt6R94Y1iQCUcK', NULL, 'employee@gmail.com', 30, 10, NULL, NULL),
+(3, 'patient', 'Usxlug6w1Nc9lLGfCcF_ZUb0t3ct-7WO', '$2y$13$/mPBq7Ce5P6CLcFnHc.Vgu/6PB0J/Y444ACmH2McgVD2Qr0kJiQPG', NULL, 'patient@gmail.com', 10, 10, NULL, NULL);
 -- -----------------------------------------------------
 -- Table `ecpms-sd`.`record`
 -- -----------------------------------------------------
@@ -261,6 +264,10 @@ CREATE TABLE IF NOT EXISTS `ecpms-sd`.`patient_profile` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+INSERT INTO `patient_profile` (`user_id`, `firstname`, `lastname`, `middlename`, `birthday`, `gender`, `city_id`, `home_address`, `company_address`, `company_name`, `cel`, `tel`, `fb`, `sports`) VALUES
+(1, 'admin', 'admin', '', '2015-05-20', 'F', NULL, 'adress', '', '', '', '', '', ''),
+(2, 'employee', 'employee', '', '2015-05-20', 'F', NULL, 'adress', '', '', '', '', '', ''),
+(3, 'patient', 'patient', '', '2015-05-14', 'M', NULL, 'address', '', '', '', '', '', '');
 
 -- -----------------------------------------------------
 -- Table `ecpms-sd`.`medical_history`
@@ -333,28 +340,28 @@ CREATE TABLE IF NOT EXISTS `ecpms-sd`.`medical_history` (
   `thyroid_disease_siblings` TINYINT(1) NOT NULL,
   `thyroid_disease_children` TINYINT(1) NOT NULL,
   `others` LONGTEXT NULL,
-  `headaches` TINYINT(1) NOT NULL,
-  `migrains` TINYINT(1) NOT NULL,
-  `seizures` TINYINT(1) NOT NULL,
-  `loss_of_vision` TINYINT(1) NOT NULL,
-  `blurred_vision` TINYINT(1) NOT NULL,
-  `distorted_vision` TINYINT(1) NOT NULL,
-  `loss_of_side_vision` TINYINT(1) NOT NULL,
-  `double_vision` TINYINT(1) NOT NULL,
-  `dryness_vision` TINYINT(1) NOT NULL,
-  `mucous_discharge` TINYINT(1) NOT NULL,
-  `redness` TINYINT(1) NOT NULL,
-  `sandy_gritty_feeling` TINYINT(1) NOT NULL,
-  `itching` TINYINT(1) NOT NULL,
-  `burning` TINYINT(1) NOT NULL,
-  `foreign_body_sensation` TINYINT(1) NOT NULL,
-  `excess_tearing_watering` TINYINT(1) NOT NULL,
-  `glare_light_sensitivity` TINYINT(1) NOT NULL,
-  `eye_pain_soreness` TINYINT(1) NOT NULL,
-  `chronic_infection_of_eye_or_lid` TINYINT(1) NOT NULL,
-  `sties_chalazion` TINYINT(1) NOT NULL,
-  `flashes_floaters_of_vision` TINYINT(1) NOT NULL,
-  `tired_eyes` TINYINT(1) NOT NULL,
+  `headaches` TINYINT(1) NULL DEFAULT 0,
+  `migrains` TINYINT(1) NULL DEFAULT 0,
+  `seizures` TINYINT(1) NULL DEFAULT 0,
+  `loss_of_vision` TINYINT(1) NULL DEFAULT 0,
+  `blurred_vision` TINYINT(1) NULL DEFAULT 0,
+  `distorted_vision` TINYINT(1) NULL DEFAULT 0,
+  `loss_of_side_vision` TINYINT(1) NULL DEFAULT 0,
+  `double_vision` TINYINT(1) NULL DEFAULT 0,
+  `dryness_vision` TINYINT(1) NULL DEFAULT 0,
+  `mucous_discharge` TINYINT(1) NULL DEFAULT 0,
+  `redness` TINYINT(1) NULL DEFAULT 0,
+  `sandy_gritty_feeling` TINYINT(1) NULL DEFAULT 0,
+  `itching` TINYINT(1) NULL DEFAULT 0,
+  `burning` TINYINT(1) NULL DEFAULT 0,
+  `foreign_body_sensation` TINYINT(1) NULL DEFAULT 0,
+  `excess_tearing_watering` TINYINT(1) NULL DEFAULT 0,
+  `glare_light_sensitivity` TINYINT(1) NULL DEFAULT 0,
+  `eye_pain_soreness` TINYINT(1) NULL DEFAULT 0,
+  `chronic_infection_of_eye_or_lid` TINYINT(1) NULL DEFAULT 0,
+  `sties_chalazion` TINYINT(1) NULL DEFAULT 0,
+  `flashes_floaters_of_vision` TINYINT(1) NULL DEFAULT 0,
+  `tired_eyes` TINYINT(1) NULL DEFAULT 0,
   INDEX `fk_user_contact_lens1_idx` (`contact_lens_id` ASC),
   PRIMARY KEY (`user_id`),
   CONSTRAINT `fk_user_contact_lens100`
@@ -369,6 +376,10 @@ CREATE TABLE IF NOT EXISTS `ecpms-sd`.`medical_history` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+INSERT INTO `medical_history` (`user_id`, `allergies`, `medications`, `treatments`, `eyeglasses`, `eyeglasses_age`, `contact_lens`, `contact_lens_age`, `contact_lens_id`, `comfortability`, `blindness_grand`, `blindness_parents`, `blindness_siblings`, `blindness_children`, `cataracts_grand`, `cataracts_parents`, `cataracts_siblings`, `cataracts_children`, `crossed_eyes_grand`, `crossed_eyes_parents`, `crossed_eyes_siblings`, `crossed_eyes_children`, `glaucoma_grand`, `glaucoma_parents`, `glaucoma_siblings`, `glaucoma_children`, `macular_degeneration_grand`, `macular_degeneration_parents`, `macular_degeneration_siblings`, `macular_degeneration_children`, `retinal_detachment_grand`, `retinal_detachment_parents`, `retinal_detachment_siblings`, `retinal_detachment_children`, `arthritis_grand`, `arthritis_parents`, `arthritis_siblings`, `arthritis_children`, `cancer_grand`, `cancer_parents`, `cancer_siblings`, `cancer_children`, `diabetes_grand`, `diabetes_parents`, `diabetes_siblings`, `diabetes_children`, `heart_disease_grand`, `heart_disease_parents`, `heart_disease_siblings`, `heart_disease_children`, `high_blood_pressure_grand`, `high_blood_pressure_parents`, `high_blood_pressure_siblings`, `high_blood_pressure_children`, `kidney_disease_grand`, `kidney_disease_parents`, `kidney_disease_siblings`, `kidney_disease_children`, `lupus_grand`, `lupus_parents`, `lupus_siblings`, `lupus_children`, `thyroid_disease_grand`, `thyroid_disease_parents`, `thyroid_disease_siblings`, `thyroid_disease_children`, `others`, `headaches`, `migrains`, `seizures`, `loss_of_vision`, `blurred_vision`, `distorted_vision`, `loss_of_side_vision`, `double_vision`, `dryness_vision`, `mucous_discharge`, `redness`, `sandy_gritty_feeling`, `itching`, `burning`, `foreign_body_sensation`, `excess_tearing_watering`, `glare_light_sensitivity`, `eye_pain_soreness`, `chronic_infection_of_eye_or_lid`, `sties_chalazion`, `flashes_floaters_of_vision`, `tired_eyes`) VALUES
+(1, '', '', '', 'N', '', 'N', '', NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, '', '', '', 'N', '', 'N', '', NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, '', '', '', 'Y', '', 'Y', '', NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- -----------------------------------------------------
 -- Table `ecpms-sd`.`prescription`
