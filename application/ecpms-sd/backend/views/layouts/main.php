@@ -33,10 +33,6 @@ AppAsset::register($this);
             ]);
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
-                ['label' => 'City', 'url' => ['/city/index'],'visible' => !Yii::$app->user->isGuest],
-                ['label' => 'Acct01', 'url' => ['/acctg1/index'],'visible' => !Yii::$app->user->isGuest],
-                //['label' => 'Patient', 'url' => ['/patient/index']],
-                //['label' => 'Home', 'url' => ['/home/index']],
             ];
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
@@ -44,7 +40,17 @@ AppAsset::register($this);
                     if(Yii::$app->user->identity->role === 20){//ADMIN
                     $menuItems = [
                         ['label' => 'Home', 'url' => ['/site/index']],
-                        ['label' => 'Admin', 'url' => ['/site/index']],
+                        ['label' => 'Acuity', 'url' => ['/acuity/index']],
+                        ['label' => 'City', 'url' => ['/city/index']],
+                        ['label' => 'Contacts', 'url' => ['/contact-lens/index']],
+                        ['label' => 'Glass designs', 'url' => ['/design/index']],
+                        ['label' => 'EOMS', 'url' => ['/eoms/index']],
+                        ['label' => 'Instructions', 'url' => ['/instruction/index']],
+                        ['label' => 'Insurance', 'url' => ['/insurance/index']],
+                        ['label' => 'Solutions', 'url' => ['/solutions/index']],
+                        ['label' => 'Wear modes', 'url' => ['/wear-mode/index']],
+                        ['label' => 'Users', 'url' => ['/user/index']],
+
                      ];
                     }if(Yii::$app->user->identity->role === 30){//ADMIN
                     $menuItems = [
