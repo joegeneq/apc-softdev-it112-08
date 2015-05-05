@@ -81,8 +81,8 @@ use backend\models\ContactLens;
             $listData,['prompt'=>'-- Contact types --']);
     ?>
 
-    <?= $form->field($medical, 'comfortability')->textInput() ?>
-
+    <?= $form->field($medical, 'comfortability')->radioList(array('1'=>'Yes','0'=>'No')); ?>
+    
     <?= $form->field($medical, 'blindness_grand')->checKbox() ?>
 
     <?= $form->field($medical, 'blindness_parents')->checKbox() ?>
