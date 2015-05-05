@@ -65,7 +65,7 @@ use backend\models\City;
 
     <?= $form->field($medical, 'treatments')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($medical, 'eyeglasses')->textInput(['maxlength' => 1]) ?>
+    <?= $form->field($medical, 'eyeglasses')->radioList(array('Y'=>'Yes','N'=>'No')); ?>
 
     <?= $form->field($medical, 'eyeglasses_age')->textInput(['maxlength' => 45]) ?>
 
