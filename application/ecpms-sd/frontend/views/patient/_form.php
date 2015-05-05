@@ -17,77 +17,75 @@ use backend\models\ContactLens;
     <div style="display: none;">
     <?= $form->field($model, 'user_id')->textInput(array('readonly' => true, 'value' => Yii::$app->user->identity->id)) ?>
     </div>
-    <?= $form->field($model, 'firstname')->textInput(['maxlength' => 255]) ?>
-
-    <?= $form->field($model, 'lastname')->textInput(['maxlength' => 255]) ?>
-
-    <?= $form->field($model, 'middlename')->textInput(['maxlength' => 255]) ?>
-
-    <?= $form->field($model, 'birthday')->widget(
-    DatePicker::className(), [
-        'inline' => false, 
-        'clientOptions' => [
-            'autoclose' => true,
-            'format' => 'yyyy-mm-dd'
-        ]
-    ]);?>
-
-    <?= $form->field($model, 'gender')->radioList(array('M'=>'Male','F'=>'Female')); ?>
-
-    <?php
-        $cities=City::find()->all();
-        $listData=ArrayHelper::map($cities, 'city_id', 'city_name');
-        echo $form->field($model, 'city_id')->dropDownList(
-            $listData,['prompt'=>'-- City --']);
-    ?>
-
-    <?= $form->field($model, 'home_address')->textInput(['maxlength' => 255]) ?>
-
-    <?= $form->field($model, 'company_address')->textInput(['maxlength' => 255]) ?>
-
-    <?= $form->field($model, 'company_name')->textInput(['maxlength' => 45]) ?>
-
-    <?= $form->field($model, 'cel')->textInput(['maxlength' => 45]) ?>
-
-    <?= $form->field($model, 'tel')->textInput(['maxlength' => 45]) ?>
-
-    <?= $form->field($model, 'fb')->textInput(['maxlength' => 75]) ?>
-
-    <?= $form->field($model, 'sports')->textarea(['rows' => 6]) ?>
-
-
+    <section style="margin: 10px;">
+        <fieldset>
+                <legend><b> Profile </b> </legend>
+            <center><table><tr><td style="width: 300px;"><?= $form->field($model, 'lastname') ?></td>
+                <td style="width: 300px;"><?= $form->field($model, 'firstname')->textInput(['maxlength' => 255]) ?></td>
+                <td style="width: 300px;"><?= $form->field($model, 'middlename')->textInput(['maxlength' => 255]) ?></td></tr>
+            </table></center>
+            <center><table>
+                <tr><td style="width: 180px;"><?= $form->field($model, 'birthday')->widget(
+                DatePicker::className(), [
+                    'inline' => false, 
+                    'clientOptions' => [
+                        'autoclose' => true,
+                        'format' => 'yyyy-mm-dd'
+                    ]
+                ]);?></td>
+                <td style="width: 180px;"><?= $form->field($model, 'gender')->radioList(array('M'=>'Male','F'=>'Female')); ?></td>
+                <td style="width: 180px;"><?= $form->field($model, 'cel')->textInput(['maxlength' => 45]) ?></td>
+                <td style="width: 180px;"><?= $form->field($model, 'tel')->textInput(['maxlength' => 45]) ?></td>
+                <td style="width: 180px;"><?= $form->field($model, 'fb')->textInput(['maxlength' => 75]) ?></td></tr>
+            </table></center>
+            <center><table>
+                <tr><td style="width: 900px;"><?= $form->field($model, 'sports')->textarea(['rows' => 6]) ?></td></tr>
+            </table></center>
+            <center><table>
+                <tr><td style="width: 300px;"><?php
+                    $cities=City::find()->all();
+                    $listData=ArrayHelper::map($cities, 'city_id', 'city_name');
+                    echo $form->field($model, 'city_id')->dropDownList(
+                        $listData,['prompt'=>'-- City --']);
+                ?></td>
+                <td style="width: 600px;"><?= $form->field($model, 'home_address')->textInput(['maxlength' => 255]) ?></td></tr>
+                <td style="width: 300px;"><?= $form->field($model, 'company_address')->textInput(['maxlength' => 255]) ?></td>
+                <td style="width: 600px;"><?= $form->field($model, 'company_name')->textInput(['maxlength' => 45]) ?></td>
+            </table></center>
+        </fieldset>
+        <br><br>
 <!--  MEDICAL HISTORY   -->
 <div style="display: none;">
     <?= $form->field($medical, 'user_id')->textInput(array('readonly' => true, 'value' => Yii::$app->user->identity->id)) ?>
 </div>
-    <?= $form->field($medical, 'allergies')->textarea(['rows' => 6]) ?>
+        <section style="margin: 10px;">
+        <fieldset>
+                <legend><b> Medical History </b> </legend>
+            <center><table><tr><td style="width: 300px;">
+                <tr><td style="width: 300px;"><?= $form->field($medical, 'allergies')->textarea(['rows' => 6]) ?></td>
+                <td style="width: 300px;"><?= $form->field($medical, 'medications')->textarea(['rows' => 6]) ?></td>
+                <td style="width: 300px;"><?= $form->field($medical, 'treatments')->textarea(['rows' => 6]) ?></td></tr>
 
-    <?= $form->field($medical, 'medications')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($medical, 'treatments')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($medical, 'eyeglasses')->radioList(array('Y'=>'Yes','N'=>'No')); ?>
-
-    <?= $form->field($medical, 'eyeglasses_age')->textInput(['maxlength' => 45]) ?>
-
-    <?= $form->field($medical, 'contact_lens')->textInput(['maxlength' => 1]) ?>
-
-    <?= $form->field($medical, 'contact_lens_age')->textInput(['maxlength' => 45]) ?>
-
-    <?php
-        $contacts=ContactLens::find()->all();
-        $listData=ArrayHelper::map($contacts, 'contact_lens_id', 'contact_lens_name');
-        echo $form->field($medical, 'contact_lens_id')->dropDownList(
-            $listData,['prompt'=>'-- Contact types --']);
-    ?>
-
-    <?= $form->field($medical, 'comfortability')->radioList(array('1'=>'Yes','0'=>'No')); ?>
-    
-<fieldset><legend>Family History</legend></fieldset>
-              <div class="form_table">
-                <table width="100%" cellpadding="2" cellsapcing ="2">
-                <thead>
-                    <tr><th>Disease</th><th>Grand parents</th><th>Parents</th><th>Siblings</th><th>Children</th></tr>
+                <tr><td style="width: 300px;"><br><?= $form->field($medical, 'contact_lens')->textInput(['maxlength' => 1]) ?></td>
+                <td style="width: 300px;"><?= $form->field($medical, 'contact_lens_age')->textInput(['maxlength' => 45]) ?></td>
+                <td style="width: 300px;"><br><?php
+                        $contacts=ContactLens::find()->all();
+                        $listData=ArrayHelper::map($contacts, 'contact_lens_id', 'contact_lens_name');
+                        echo $form->field($medical, 'contact_lens_id')->dropDownList(
+                            $listData,['prompt'=>'-- Contact types --']);
+                ?></td></tr>
+                <tr><td style="width: 300px;"><?= $form->field($medical, 'comfortability')->radioList(array('1'=>'Yes','0'=>'No')); ?></td>
+                <td style="width: 300px;"><br><?= $form->field($medical, 'eyeglasses')->radioList(array('Y'=>'Yes','N'=>'No')); ?></td>
+                <td style="width: 300px;"><br><?= $form->field($medical, 'eyeglasses_age')->textInput(['maxlength' => 45]) ?></td></tr>
+            </table></center>
+    </fieldset>
+<br><br>
+    <section style="margin: 10px;">
+        <fieldset>
+                <legend><b> Family History </b> </legend>
+<!--              <div class="form_table">-->
+                <center><table width="900px" cellpadding="2" cellsapcing ="2"><thead>
+                    <tr><th style="width: 300px;">Disease</th><th style="width: 150px;">Grand parents</th><th style="width: 150px;">Parents</th><th style="width: 150px;">Siblings</th><th style="width: 150px;">Children</th></tr>
                 </thead>
                 <tbody>
                      <tr><td>Blindness</td><td><?= $form->field($medical, 'blindness_grand')->checkbox() ?></td><td><?= $form->field($medical, 'blindness_parents')->checkbox() ?></td>
@@ -118,56 +116,43 @@ use backend\models\ContactLens;
                         <td><?= $form->field($medical, 'lupus_siblings')->checkbox() ?></td><td><?= $form->field($medical, 'lupus_children')->checkbox() ?></td></tr>
                     <tr><td>Thyroid Disease</td><td><?= $form->field($medical, 'thyroid_disease_grand')->checkbox() ?></td><td><?= $form->field($medical, 'thyroid_disease_parents')->checkbox() ?></td>
                         <td><?= $form->field($medical, 'thyroid_disease_siblings')->checkbox() ?></td><td><?= $form->field($medical, 'thyroid_disease_children')->checkbox() ?></td></tr>
-                </tbody>
-                </table>
+                </tbody></table></center>
               </div>
 
-    <?= $form->field($medical, 'others')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($medical, 'headaches')->checKbox() ?>
-
-    <?= $form->field($medical, 'migrains')->checKbox() ?>
-
-    <?= $form->field($medical, 'seizures')->checKbox() ?>
-
-    <?= $form->field($medical, 'loss_of_vision')->checKbox() ?>
-
-    <?= $form->field($medical, 'blurred_vision')->checKbox() ?>
-
-    <?= $form->field($medical, 'distorted_vision')->checKbox() ?>
-
-    <?= $form->field($medical, 'loss_of_side_vision')->checKbox() ?>
-
-    <?= $form->field($medical, 'double_vision')->checKbox() ?>
-
-    <?= $form->field($medical, 'dryness_vision')->checKbox() ?>
-
-    <?= $form->field($medical, 'mucous_discharge')->checKbox() ?>
-
-    <?= $form->field($medical, 'redness')->checKbox() ?>
-
-    <?= $form->field($medical, 'sandy_gritty_feeling')->checKbox() ?>
-
-    <?= $form->field($medical, 'itching')->checKbox() ?>
-
-    <?= $form->field($medical, 'burning')->checKbox() ?>
-
-    <?= $form->field($medical, 'foreign_body_sensation')->checKbox() ?>
-
-    <?= $form->field($medical, 'excess_tearing_watering')->checKbox() ?>
-
-    <?= $form->field($medical, 'glare_light_sensitivity')->checKbox() ?>
-
-    <?= $form->field($medical, 'eye_pain_soreness')->checKbox() ?>
-
-    <?= $form->field($medical, 'chronic_infection_of_eye_or_lid')->checKbox() ?>
-
-    <?= $form->field($medical, 'sties_chalazion')->checKbox() ?>
-
-    <?= $form->field($medical, 'flashes_floaters_of_vision')->checKbox() ?>
-
-    <?= $form->field($medical, 'tired_eyes')->checKbox() ?>
-
+            <center><table>
+                <tr><td style="width: 900px;"><?= $form->field($medical, 'others')->textarea(['rows' => 6]) ?></td></tr>
+            </table></center>
+<br><br>
+        <fieldset>
+                <legend><b> Experience </b> </legend>
+                <center><table width="900px" cellpadding="2" cellsapcing ="2"><thead>
+                    <tr><th style="width: 200px;">Events</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Headaches</td><td><?= $form->field($medical, 'headaches')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>Migrains</td><td><?= $form->field($medical, 'migrains')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>Seizures</td><td><?= $form->field($medical, 'seizures')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>Loss of vision</td><td><?= $form->field($medical, 'loss_of_vision')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>Blurred vision</td><td><?= $form->field($medical, 'blurred_vision')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>Distorted vision</td><td><?= $form->field($medical, 'distorted_vision')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>Loss of side vision</td><td><?= $form->field($medical, 'loss_of_side_vision')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>Double vision</td><td><?= $form->field($medical, 'double_vision')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>Dryness vision</td><td><?= $form->field($medical, 'dryness_vision')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>Mucous Discharge</td><td><?= $form->field($medical, 'mucous_discharge')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>Redness</td><td><?= $form->field($medical, 'redness')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>Sandy / gritty feeling</td><td><?= $form->field($medical, 'sandy_gritty_feeling')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>Itching</td><td><?= $form->field($medical, 'itching')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>Burning</td><td><?= $form->field($medical, 'burning')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>Foreign body sensation</td><td><?= $form->field($medical, 'foreign_body_sensation')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>Excess tearing / watering</td><td><?= $form->field($medical, 'excess_tearing_watering')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>Glare light sensitivity</td><td><?= $form->field($medical, 'glare_light_sensitivity')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>Eye pain soreness</td><td><?= $form->field($medical, 'eye_pain_soreness')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>Chronic infection of eye or lid</td><td><?= $form->field($medical, 'chronic_infection_of_eye_or_lid')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>sties_chalazion</td><td><?= $form->field($medical, 'sties_chalazion')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>Flashes floaters_of_vision</td><td><?= $form->field($medical, 'flashes_floaters_of_vision')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr>
+                    <tr><td>Tired eyes</td><td><?= $form->field($medical, 'tired_eyes')->radioList(array(1=>'Yes',0=>'No')); ?></td></tr></tbody>
+                </table></center>
+        </fieldset>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Submit' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
