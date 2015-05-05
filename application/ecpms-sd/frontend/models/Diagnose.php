@@ -51,7 +51,7 @@ class Diagnose extends \yii\db\ActiveRecord
     {
         return [
             'record_id' => 'Record ID',
-            'patient_id' => 'Patient ID',
+            'patient_id' => 'Patient',
             'employee_id' => 'Employee ID',
             'patient_signature' => 'Patient Signature',
             'agreed_date' => 'Agreed Date',

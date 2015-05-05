@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'user_id',
             'firstname',
             'lastname',
-            'middlename',
+            //'middlename',
             //'birthday',
              'gender',
              'city_id',
@@ -38,6 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
              'cel',
              'tel',
              'fb',
+             
             // 'sports:ntext',
 
             ['class' => 'yii\grid\ActionColumn'],
