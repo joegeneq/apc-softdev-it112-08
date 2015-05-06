@@ -19,7 +19,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create Prescription', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?= GridView::widget([
+<?php
+if(Yii::$app->user->identity->role == 10){
+    echo $this->render('/site/say');
+}else
+    echo  GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
