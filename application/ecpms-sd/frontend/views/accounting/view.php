@@ -16,7 +16,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->record_id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->record_id], [
+<?php
+if(Yii::$app->user->identity->role == 10){
+    echo $this->render('/site/say');
+}else
+    echo  Html::a('Delete', ['delete', 'id' => $model->record_id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
