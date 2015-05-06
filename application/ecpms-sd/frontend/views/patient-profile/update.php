@@ -6,9 +6,9 @@ use yii\helpers\Html;
 /* @var $model frontend\models\PatientProfile */
 
 //$this->title = 'Update Patient Profile: ' . ' ' . $model->user_id;
-$this->params['breadcrumbs'][] = ['label' => 'Patient Profiles', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->user_id, 'url' => ['view', 'id' => $model->user_id]];
-$this->params['breadcrumbs'][] = 'Update';
+//$this->params['breadcrumbs'][] = ['label' => 'Patient Profiles', 'url' => ['index']];
+//$this->params['breadcrumbs'][] = ['label' => $model->user_id, 'url' => ['view', 'id' => $model->user_id]];
+//$this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="patient-profile-update">
 
