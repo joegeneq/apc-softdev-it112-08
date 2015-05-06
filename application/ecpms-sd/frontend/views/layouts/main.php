@@ -63,7 +63,7 @@ AppAsset::register($this);
                         ['label' => 'Profile', 'url' => ['/patient-profile/update', 'id' => Yii::$app->user->identity->id]],
                         ['label' => 'Medical History', 'url' => ['/medical-history/update', 'id' => Yii::$app->user->identity->id]],
                         ['label' => 'Patients', 'url' => ['/patient-profile/index']],
-                        ['label' => 'Diagnose', 'url' => ['/diagnose/index']],
+                        ['label' => 'Diagnose', 'url' => ['/diagnose/create']],
                         ['label' => 'Records', 'url' => ['/record/index']],
                         ['label' => 'Evaluation', 'url' => ['/evaluation/index']],
                         ['label' => 'Prescription', 'url' => ['/prescription/index']],
