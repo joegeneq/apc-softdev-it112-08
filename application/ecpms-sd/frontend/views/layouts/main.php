@@ -5,6 +5,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use frontend\widgets\Alert;
+use yii\helpers\Console;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -42,7 +43,6 @@ AppAsset::register($this);
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {
                 if(Yii::$app->user->identity->role == 20){//ADMIN
-                    //$url = Url::to(['user/view', 'id' => Yii::$app->user->identity->id]);
                     $menuItems = [
                         ['label' => 'Home', 'url' => ['/site/index']],
                         ['label' => 'About', 'url' => ['/site/about']],
@@ -57,7 +57,7 @@ AppAsset::register($this);
                 if(Yii::$app->user->identity->role == 30){//EMPLOYEE
                     $menuItems = [
                         ['label' => 'Home', 'url' => ['/site/index']],
-                        //['label' => 'About', 'url' => ['/site/about']],
+                        ['label' => 'About', 'url' => ['/site/about']],
                         //['label' => 'Contact', 'url' => ['/site/contact']],
                         ['label' => 'Account', 'url' => ['/user/view', 'id' => Yii::$app->user->identity->id]],
                         ['label' => 'Profile', 'url' => ['/patient-profile/update', 'id' => Yii::$app->user->identity->id]],
@@ -74,20 +74,33 @@ AppAsset::register($this);
                 if(Yii::$app->user->identity->role == 10){//PATIENT
                     $menuItems = [
                         ['label' => 'Home', 'url' => ['/site/index']],
-                        ['label' => 'About', 'url' => ['/site/about']],
-                        ['label' => 'Contact', 'url' => ['/site/contact']],
+                        //['label' => 'About', 'url' => ['/site/about']],
+                        //['label' => 'Contact', 'url' => ['/site/contact']],
                         ['label' => 'Account', 'url' => ['/user/view', 'id' => Yii::$app->user->identity->id]],
                         ['label' => 'Profile', 'url' => ['/patient-profile/update', 'id' => Yii::$app->user->identity->id]],
                         ['label' => 'Medical History', 'url' => ['/medical-history/update', 'id' => Yii::$app->user->identity->id]],
-                        ['label' => 'Records', 'url' => ['/record/view']],
+                        //['label' => 'Records2', 'url' => ['/record/create'],'visible' => !Yii::$app->user->identity->role == 10],
+                        //['label' => 'Records3', 'url' => ['/record/create'],'deny' => !Yii::$app->user->identity->role == 10],
+                        //['label' => 'Records4', 'url' => ['/record/create'], 'url' => ['/site/error'], 'confirm' => ['Are you sure?']],
+                        //['label' => 'Records5', 'url' => ['/record/create'], 'class' => ['/alert-danger']],
+                        //['label' => 'Records6', 'url' => ['/record/create'], 'render' => ['/alert-danger']],
+                        //['label' => 'Records7', 'url' => ['/record/create'], 'return' => Console::confirm('asdf','def')],
+                        //['label' => 'Records', 'url' => ['/record/view'], 'alert' => ('are you')],
+                        //['label' => 'Records2', 'url' => ['/record/view'],[Yii::$app->session->setFlash('error', 'There was an error sending email.')]],
+                        //['label' => 'Records create', 'url' => ['/record/create'], 'url' => ['/site/say']],
+                        //['label' => 'Records', 'url' => ['/record/view']],
+                        //['label' => 'Records index', 'url' => ['/record/index'], 'url' => ['/site/say']],
+                        //['label' => 'Records update', 'url' => ['/record/update'], 'url' => ['/site/say']],
+                        ['label' => 'Records', 'url' => ['/record/index']],
+                        
                     ];
                 }
-
+ 
 
                 $menuItems[] = [
                     'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
                     'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'get']
+                    'linkOptions' => ['data-method' => 'post']
                 ];
             }
 
