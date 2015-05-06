@@ -19,7 +19,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?= GridView::widget([
+<?php
+if(Yii::$app->user->identity->role == 10){
+    echo $this->render('/site/say');
+}else
+    echo GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
@@ -31,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'password_hash',
             'password_reset_token',
             // 'email:email',
-            // 'role',
+            'role',
             // 'status',
             // 'created_at',
             // 'updated_at',
