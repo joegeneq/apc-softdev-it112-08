@@ -57,6 +57,8 @@ class Record extends \yii\db\ActiveRecord
             'agreed_date' => 'Agreed due date',
             'employee_signature' => 'Employee signature',
             'complaints' => 'Complaints',
+            'userRole' => 'Role',
+            'patientName' => 'Patient',
         ];
     }
 
@@ -98,5 +100,12 @@ class Record extends \yii\db\ActiveRecord
     public function getEmployee()
     {
         return $this->hasOne(User::className(), ['id' => 'employee_id']);
+    }
+    public function getUserRole(){
+        return $this->user->role;
+    }
+        public function getPatientName()
+    {
+        return $this->hasOne(User::className(), ['username' => 'patient_id']);
     }
 }
