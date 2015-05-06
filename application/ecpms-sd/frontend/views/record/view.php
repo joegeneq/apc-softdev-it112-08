@@ -35,6 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'agreed_date',
             'employee_signature',
             'complaints:ntext',
+            //'patientName',
         ],
     ]) ?>
 

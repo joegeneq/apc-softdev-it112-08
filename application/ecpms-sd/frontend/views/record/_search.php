@@ -17,7 +17,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'record_id') ?>
 
-    <?= $form->field($model, 'patient_id') ?>
+    <?= $form->field($model, 'patient_id')->textInput(array('readonly' => true, 'value' => Yii::$app->user->identity->id)) ?>
 
     <?= $form->field($model, 'employee_id') ?>
 

@@ -13,18 +13,14 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="record-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php //echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         
     </p>
-<?php
-if(Yii::$app->user->identity->role == 10){
-    echo $this->render('/site/say');
-}else
-    echo GridView::widget([
+<?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+        //'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
@@ -40,15 +36,15 @@ if(Yii::$app->user->identity->role == 10){
             'label' => 'User',
             'value' => 'user.role',
             'filter' => yii\helpers\ArrayHelper::map(frontend\models\User::find()->all(),'id','role')
-            ],
-            [
-            'attribute' => 'patient_id',
-            'label' => 'Patient',
-            'value' => 'user.role',
-            'filter' => yii\helpers\ArrayHelper::map(frontend\models\User::find()->all(),'id','role')
             ],*/
-            //'patientName',
+            //'userRole',
 
+            /*[
+            'attribute' => 'patient_id',
+            'label' => 'User',
+            'value' => 'user.username',
+            'filter' => yii\helpers\ArrayHelper::map(frontend\models\User::find()->all(),'id','username')
+            ],*/
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
