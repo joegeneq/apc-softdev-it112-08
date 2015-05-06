@@ -45,8 +45,8 @@ AppAsset::register($this);
                 if(Yii::$app->user->identity->role == 20){//ADMIN
                     $menuItems = [
                         ['label' => 'Home', 'url' => ['/site/index']],
-                        ['label' => 'About', 'url' => ['/site/about']],
-                        ['label' => 'Contact', 'url' => ['/site/contact']],
+                        //['label' => 'About', 'url' => ['/site/about']],
+                        //['label' => 'Contact', 'url' => ['/site/contact']],
                         ['label' => 'Account', 'url' => ['/user/view', 'id' => Yii::$app->user->identity->id]],
                         ['label' => 'Profile', 'url' => ['/patient-profile/update', 'id' => Yii::$app->user->identity->id]],
                         ['label' => 'Medical History', 'url' => ['/medical-history/update', 'id' => Yii::$app->user->identity->id]],
@@ -57,7 +57,7 @@ AppAsset::register($this);
                 if(Yii::$app->user->identity->role == 30){//EMPLOYEE
                     $menuItems = [
                         ['label' => 'Home', 'url' => ['/site/index']],
-                        ['label' => 'About', 'url' => ['/site/about']],
+                        //['label' => 'About', 'url' => ['/site/about']],
                         //['label' => 'Contact', 'url' => ['/site/contact']],
                         ['label' => 'Account', 'url' => ['/user/view', 'id' => Yii::$app->user->identity->id]],
                         ['label' => 'Profile', 'url' => ['/patient-profile/update', 'id' => Yii::$app->user->identity->id]],
