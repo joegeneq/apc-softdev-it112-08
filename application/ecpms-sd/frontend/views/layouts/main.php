@@ -73,8 +73,13 @@ AppAsset::register($this);
                         ['label' => 'Account', 'url' => ['/user/view', 'id' => Yii::$app->user->identity->id]],
                         ['label' => 'Profile', 'url' => ['/patient-profile/update', 'id' => Yii::$app->user->identity->id]],
                         ['label' => 'Medical History', 'url' => ['/medical-history/update', 'id' => Yii::$app->user->identity->id]],
-                        ['label' => 'Records', 'url' => ['/record/index']],
-                        
+                        //['label' => 'Records', 'url' => ['RecordSearch[patient_id%3D']],
+                        //['label' => 'Records', 'url' => ['/record/index/patient', 'id' => Yii::$app->user->identity->id]],
+                        //['label' => 'Records', 'url' => ['/record/index']],
+                        ['label' => 'Records', 'url' => ['/record/index', 'RecordSearch[record_id]=',
+                                                                        'RecordSearch[patient_id]' => Yii::$app->user->identity->id,
+                                                                        'RecordSearch[employee_id]=',
+                                                                        'RecordSearch[agreed_date]=' ]],
                     ];
                 }
  
