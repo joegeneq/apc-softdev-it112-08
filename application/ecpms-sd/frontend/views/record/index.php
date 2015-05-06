@@ -18,8 +18,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Create Record', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-
-    <?= GridView::widget([
+<?php
+if(Yii::$app->user->identity->role == 10){
+    echo $this->render('/site/say');
+}else
+    echo GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
@@ -28,10 +31,23 @@ $this->params['breadcrumbs'][] = $this->title;
             'record_id',
             'patient_id',
             'employee_id',
-            'patient_signature',
-            'agreed_date',
+            //'patient_signature',
+            //'agreed_date',
             // 'employee_signature',
             // 'complaints:ntext',
+            /*[
+            'attribute' => 'patient_id',
+            'label' => 'User',
+            'value' => 'user.role',
+            'filter' => yii\helpers\ArrayHelper::map(frontend\models\User::find()->all(),'id','role')
+            ],
+            [
+            'attribute' => 'patient_id',
+            'label' => 'Patient',
+            'value' => 'user.role',
+            'filter' => yii\helpers\ArrayHelper::map(frontend\models\User::find()->all(),'id','role')
+            ],*/
+            //'patientName',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
