@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Record', ['create'], ['class' => 'btn btn-success']) ?>
+        
     </p>
 <?php
 if(Yii::$app->user->identity->role == 10){
