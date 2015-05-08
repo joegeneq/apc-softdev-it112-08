@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'username',
             //'auth_key',
             //'password_hash',
-            'password_reset_token',
+            //'password_reset_token',
             'email:email',
             //'role',
             //'status',
@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
     
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <!-- <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>-->
     </p>
 
 </div>

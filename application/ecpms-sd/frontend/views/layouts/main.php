@@ -27,7 +27,7 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'My Company',
+                'brandLabel' => 'Abesamis Eye Clinic',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
@@ -36,7 +36,7 @@ AppAsset::register($this);
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
                 ['label' => 'About', 'url' => ['/site/about']],
-                ['label' => 'Contact', 'url' => ['/site/contact']],
+                //['label' => 'Contact', 'url' => ['/site/contact']],
             ];
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
@@ -50,13 +50,13 @@ AppAsset::register($this);
                         ['label' => 'Medical History', 'url' => ['/medical-history/update', 'id' => Yii::$app->user->identity->id]],
                         ['label' => 'Patients', 'url' => ['/patient/index']],
                         ['label' => 'Patient\'s Medical History', 'url' => ['/medical-history/index']],
+                        ['label' => 'Logout (' . Yii::$app->user->identity->username . ')','url' => ['/site/logout'],'linkOptions' => ['data-method' => 'post']],
                     ];
                 }
                 if(Yii::$app->user->identity->role == 30){//EMPLOYEE
+
                     $menuItems = [
-                        ['label' => 'Home', 'url' => ['/site/index']],
-                        ['label' => 'Account', 'url' => ['/user/view', 'id' => Yii::$app->user->identity->id]],
-                        ['label' => 'Profile', 'url' => ['/patient-profile/update', 'id' => Yii::$app->user->identity->id]],
+                        //['label' => 'Home', 'url' => ['/site/index']],
                         ['label' => 'Medical History', 'url' => ['/medical-history/update', 'id' => Yii::$app->user->identity->id]],
                         ['label' => 'Patients', 'url' => ['/patient-profile/index']],
                         ['label' => 'Diagnose', 'url' => ['/diagnose/create']],
@@ -64,8 +64,13 @@ AppAsset::register($this);
                         ['label' => 'Evaluation', 'url' => ['/evaluation/index']],
                         ['label' => 'Prescription', 'url' => ['/prescription/index']],
                         ['label' => 'Accounting', 'url' => ['/accounting/index']],
+                        ];
 
-                    ];
+                    $menuItems[] = ['label' => 'Account Management', 'items' => [
+                        //['label' => 'Account', 'url' => ['/user/view', 'id' => Yii::$app->user->identity->id]],
+                        ['label' => 'Edit Profile', 'url' => ['/patient-profile/update', 'id' => Yii::$app->user->identity->id]],
+                        ['label' => 'Logout (' . Yii::$app->user->identity->username . ')','url' => ['/site/logout'],'linkOptions' => ['data-method' => 'post']],
+                   ] ];
                 }
                 if(Yii::$app->user->identity->role == 10){//PATIENT
                     $menuItems = [
@@ -80,15 +85,10 @@ AppAsset::register($this);
                                                                         'RecordSearch[patient_id]' => Yii::$app->user->identity->id,
                                                                         'RecordSearch[employee_id]=',
                                                                         'RecordSearch[agreed_date]=' ]],
+                        ['label' => 'Logout (' . Yii::$app->user->identity->username . ')','url' => ['/site/logout'],'linkOptions' => ['data-method' => 'post']],
                     ];
                 }
- 
 
-                $menuItems[] = [
-                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                    'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post']
-                ];
             }
 
             echo Nav::widget([
