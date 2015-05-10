@@ -12,7 +12,7 @@ use dosamigos\datepicker\DatePicker;
 
 <div class="record-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
     <?php
         $patients=User::find()->where('role=10')->all();

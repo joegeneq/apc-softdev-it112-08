@@ -12,6 +12,7 @@ use frontend\models\DiagnoseSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * DiagnoseController implements the CRUD actions for Diagnose model.
@@ -79,6 +80,14 @@ class DiagnoseController extends Controller
             $accounting->load(Yii::$app->request->post()) //&& $accounting->save()
             ) {
             $model->save();
+            $imageName = $model->record_id;
+            $model->file1= UploadedFile::getInstance($model,'file1');
+            $model->file1->saveAs('uploads/'. $imageName . '.' . $model->file1->extension );
+            $model->logo1 = 'uploads/'. $imageName . '.' . $model->file1->extension ;
+           $model->file2 = UploadedFile::getInstance($model,'file2');
+            $model->file2->saveAs('uploads2/'. $imageName . '.' . $model->file2->extension );
+            $model->logo2 = 'uploads2'.$imageName.'.'.$model->file2->extension;
+
             //$model->record_id=$evaluation->record_id;
             $evaluation->record_id=$model->record_id;
             $evaluation->save();

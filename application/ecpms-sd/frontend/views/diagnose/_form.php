@@ -15,7 +15,7 @@ use dosamigos\datepicker\DatePicker;
 
 <div class="diagnose-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
     <section style="margin: 10px;">
         <fieldset>
@@ -33,6 +33,9 @@ use dosamigos\datepicker\DatePicker;
 
     <?= $form->field($model, 'patient_signature')->textInput() ?>
 
+    <?= $form->field($model, 'file1')->fileInput(); ?>
+
+
     <?= $form->field($model, 'agreed_date')->widget(
                 DatePicker::className(), [
                     'inline' => false, 
@@ -43,6 +46,8 @@ use dosamigos\datepicker\DatePicker;
     ]);?>
 
     <?= $form->field($model, 'employee_signature')->textInput() ?>
+
+    <?= $form->field($model, 'file2')->fileInput(); ?>
 
     <?= $form->field($model, 'complaints')->textarea(['rows' => 6]) ?>
 

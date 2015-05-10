@@ -26,6 +26,9 @@ class Record extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+
+    
+
     public static function tableName()
     {
         return 'record';
@@ -39,7 +42,7 @@ class Record extends \yii\db\ActiveRecord
         return [
             [['patient_id', 'employee_id'], 'required'],
             [['patient_id', 'employee_id'], 'integer'],
-            [['patient_signature', 'employee_signature', 'complaints'], 'string'],
+            [['patient_signature', 'logo1', 'employee_signature', 'complaints'], 'string'],
             [['agreed_date'], 'safe']
         ];
     }

@@ -1,9 +1,6 @@
 <?php
-
 namespace frontend\models;
-
 use Yii;
-
 /**
  * This is the model class for table "record".
  *
@@ -26,11 +23,13 @@ class Diagnose extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+    public $file1;
+    public $file2;
+
     public static function tableName()
     {
         return 'record';
     }
-
     /**
      * @inheritdoc
      */
@@ -40,10 +39,11 @@ class Diagnose extends \yii\db\ActiveRecord
             [['patient_id', 'employee_id'], 'required'],
             [['patient_id', 'employee_id'], 'integer'],
             [['patient_signature', 'employee_signature', 'complaints'], 'string'],
-            [['agreed_date'], 'safe']
+            [['logo1','logo2'], 'string', 'max' => 200],
+            [['agreed_date'], 'safe'],
+            [['file1', 'file2'], 'file']
         ];
     }
-
     /**
      * @inheritdoc
      */
@@ -59,7 +59,6 @@ class Diagnose extends \yii\db\ActiveRecord
             'complaints' => 'Complaints',
         ];
     }
-
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -67,7 +66,6 @@ class Diagnose extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Accounting::className(), ['record_id' => 'record_id']);
     }
-
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -75,7 +73,6 @@ class Diagnose extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Evaluation::className(), ['record_id' => 'record_id']);
     }
-
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -83,7 +80,6 @@ class Diagnose extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Prescription::className(), ['record_id' => 'record_id']);
     }
-
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -91,7 +87,6 @@ class Diagnose extends \yii\db\ActiveRecord
     {
         return $this->hasOne(User::className(), ['record_id' => 'patient_id']);
     }
-
     /**
      * @return \yii\db\ActiveQuery
      */
