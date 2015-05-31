@@ -13,6 +13,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use yii\helpers\url;
 
 /**
  * DiagnoseController implements the CRUD actions for Diagnose model.
@@ -82,11 +83,11 @@ class DiagnoseController extends Controller
             $model->save();
             $imageName = $model->record_id;
             $model->file1= UploadedFile::getInstance($model,'file1');
-            $model->file1->saveAs('uploads/'. $imageName . '.' . $model->file1->extension );
-            $model->logo1 = 'uploads/'. $imageName . '.' . $model->file1->extension ;
+            $model->file1->saveAs('patientsig/'.'PatientRecord'. $imageName . '.' . $model->file1->extension );
+            $model->logo1 = 'patientsig/'.'PatientRecord'. $imageName . '.' . $model->file1->extension ;
            $model->file2 = UploadedFile::getInstance($model,'file2');
-            $model->file2->saveAs('uploads2/'. $imageName . '.' . $model->file2->extension );
-            $model->logo2 = 'uploads2'.$imageName.'.'.$model->file2->extension;
+            $model->file2->saveAs('employeesig/'.'EmpRecord'. $imageName . '.' . $model->file2->extension );
+            $model->logo2 = 'employeesig/'.'EmpRecord'. $imageName . '.' . $model->file2->extension;
 
             //$model->record_id=$evaluation->record_id;
             $evaluation->record_id=$model->record_id;
@@ -96,7 +97,7 @@ class DiagnoseController extends Controller
             $accounting->record_id=$model->record_id;
             $accounting->save();
 
-            return $this->redirect(['view', 'id' => $model->record_id]);
+            return $this->redirect(Url::home());
 
         } else {
             return $this->render('create', [
