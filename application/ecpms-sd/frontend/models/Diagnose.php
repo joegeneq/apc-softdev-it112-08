@@ -57,6 +57,8 @@ class Diagnose extends \yii\db\ActiveRecord
             'agreed_date' => 'Agreed due date',
             'employee_signature' => 'Employee signature',
             'complaints' => 'Complaints',
+            'file1' => 'Patient Signature',
+            'file2' => 'Employee Signature',
         ];
     }
     /**

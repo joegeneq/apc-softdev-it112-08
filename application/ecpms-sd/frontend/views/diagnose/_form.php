@@ -31,7 +31,7 @@ use dosamigos\datepicker\DatePicker;
     <?= $form->field($model, 'employee_id')->textInput(array('readonly' => true, 'value' => Yii::$app->user->identity->id)) ?>
     </div>
 
-    <?= $form->field($model, 'patient_signature')->textInput() ?>
+ <!--   <?= $form->field($model, 'patient_signature')->textInput() ?> -->
 
     <?= $form->field($model, 'file1')->fileInput(); ?>
 
@@ -45,7 +45,7 @@ use dosamigos\datepicker\DatePicker;
                     ]
     ]);?>
 
-    <?= $form->field($model, 'employee_signature')->textInput() ?>
+  <!--  <?= $form->field($model, 'employee_signature')->textInput() ?> -->
 
     <?= $form->field($model, 'file2')->fileInput(); ?>
 
